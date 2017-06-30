@@ -1,0 +1,10 @@
+<div class="login-page">
+  <div class="form" (submit)="onLoginSubmit()">
+    <form class="login-form">
+      <input type="text" placeholder="email" name="email" [(ngModel)]="email"/>
+      <input type="password" placeholder="password" name="password" [(ngModel)]="password"/>
+      <button (click)="onLogin()">login</button>
+    </form>
+    <button type="button" class="btn btn-primary" (click)="onLogin()">Login with google</button>
+  </div>
+</div>

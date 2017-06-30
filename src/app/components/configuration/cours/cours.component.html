@@ -1,0 +1,49 @@
+
+  <button class="btn-save" (click)="onSaveCours()">Enregistrer</button>
+  <hr> 
+
+
+<div class="panel panel-default">
+  <div class="panel-body">
+    <div class="row">
+      <div class="col-md-6">
+        <div class="input-group input-group-sm">
+          <span class="input-group-addon" id="sizing-addon3">Nom du cours</span>
+          <input type="text" class="form-control" placeholder="Nom du cours" name="NameCrs" [(ngModel)]="NameCrs" aria-describedby="sizing-addon3">
+        </div>
+        <div class="input-group input-group-sm" style="padding-top: 10px">
+          <span class="input-group-addon" id="sizing-addon3">Code du cours</span>
+          <input type="text" class="form-control" placeholder="Code du cours" name="cdeCrs" [(ngModel)]="cdeCrs" aria-describedby="sizing-addon3">
+        </div>
+
+      </div>
+
+      <div class="col-md-6">
+        <div class="input-group input-group-sm">
+          <span class="input-group-addon" id="sizing-addon3">Abreviation du cours</span>
+          <input type="text" class="form-control" placeholder="Abreviation du cours" name="abrvCrs" [(ngModel)]="abrvCrs" aria-describedby="sizing-addon3">
+        </div>
+        <div class="input-group input-group-sm" style="padding-top: 10px">
+          <span class="input-group-addon" id="sizing-addon3">Departement</span>
+          <input type="text" class="form-control" placeholder="Departement" name="DepCrs" [(ngModel)]="DepCrs" aria-describedby="sizing-addon3">
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</div>
+
+<div class="panel panel-default">
+  <div class="panel-heading">Intro du cours</div>
+  <div class="panel-body">
+    <textarea class="form-control" rows="3" name="introCrs" [(ngModel)]="introCrs"></textarea>
+  </div>
+</div>
+
+<div class="panel panel-default">
+  <div class="panel-body">
+    Echelle de notation par defaut
+  </div>
+
+</div>

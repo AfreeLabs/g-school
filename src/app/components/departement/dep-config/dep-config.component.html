@@ -1,0 +1,70 @@
+<p>
+  configuration works!
+  <button class="btn-save" (click)="onSave()">Enregistrer</button>
+</p>
+<hr> 
+
+<div class="panel panel-default">
+  <div class="panel-body">
+    <div class="input-group input-group-sm">
+      <span class="input-group-addon" id="sizing-addon3">Nom du departement</span>
+      <input type="text" class="form-control" placeholder="departement" name="depName" [(ngModel)]="depName" aria-describedby="sizing-addon3">
+    </div>
+
+    <div class="input-group input-group-sm" style="padding-top: 10px">
+      <span class="input-group-addon" id="sizing-addon3">Abreviation</span>
+      <input type="text" class="form-control" placeholder="Responsable" name="depAbrv" [(ngModel)]="depAbrv" aria-describedby="sizing-addon3">
+    </div>
+
+    <div class="input-group input-group-sm" style="padding-top: 10px">
+      <span class="input-group-addon" id="sizing-addon3">Responsable</span>
+      <input type="text" class="form-control" placeholder="Responsable" name="depRspnsbl" [(ngModel)]="depRspnsbl" aria-describedby="sizing-addon3">
+    </div>
+
+    <div class="input-group input-group-sm" style="padding-top: 10px">
+      <span class="input-group-addon" id="sizing-addon3">Professeur principal</span>
+      <input type="text" class="form-control" placeholder="Professeur principal" name="depPrncpl" [(ngModel)]="depPrncpl" aria-describedby="sizing-addon3">
+    </div>
+  </div>
+</div>
+
+<div class="panel panel-default">
+  <div class="panel-heading">Intro du departement</div>
+  <div class="panel-body">
+    <textarea class="form-control" rows="3" name="introDep" [(ngModel)]="introDep"></textarea>
+  </div>
+</div>
+
+<div class="panel panel-default">
+  <div class="panel-body">
+    <div class="panel panel-default">
+      <!-- Default panel contents -->
+      <div class="panel-heading">Classe</div>
+      <div class="panel-body">
+        <p>Ajouter les classes pour ce departement</p>
+      </div>
+
+      <!-- Table -->
+      <table class="table table-bordered table-hover">
+        <thead>
+          <tr>
+            <td>#</td>
+            <td>Code classe</td>
+            <td>Classe</td>
+            <td>Place</td>
+            <td>Principal</td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

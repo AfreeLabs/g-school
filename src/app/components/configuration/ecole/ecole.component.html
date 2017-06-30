@@ -1,0 +1,224 @@
+
+<button class="btn-save" (click)="onSave()">Enregistrer</button>
+<hr>  
+
+<div class="panel panel-default">
+  <div class="panel-body">
+    <div class="row">
+      <div class="col-md-6">
+        <div class="input-group input-group-sm">
+          <span class="input-group-addon" id="sizing-addon3">Nom de l'etablissement</span>
+          <input type="text" class="form-control" placeholder="Nom de l'etablissement" aria-describedby="sizing-addon3" name="etsName" [(ngModel)]="etsName">
+        </div>
+        <div class="input-group input-group-sm" style="padding-top: 10px">
+          <span class="input-group-addon" id="sizing-addon3">Abreviation</span>
+          <input type="text" class="form-control" placeholder="Abreviation" aria-describedby="sizing-addon3" name="etsAbrv" [(ngModel)]="etsAbrv">
+        </div>
+        <div class="input-group input-group-sm" style="padding-top: 10px">
+          <span class="input-group-addon" id="sizing-addon3">Annee Scolaire</span>
+          <input type="text" class="form-control" placeholder="Annee Scolaire" aria-describedby="sizing-addon3" name="annSco" [(ngModel)]="annSco">
+        </div>
+
+      </div>
+      <div class="col-md-6">
+        <div class="input-group input-group-sm">
+          <span class="input-group-addon" id="sizing-addon3">Adresse</span>
+          <input type="text" class="form-control" placeholder="Adresse" aria-describedby="sizing-addon3" name="adress" [(ngModel)]="adress">
+        </div>
+        <div class="input-group input-group-sm" style="padding-top: 10px">
+          <span class="input-group-addon" id="sizing-addon3">Telephone</span>
+          <input type="text" class="form-control" placeholder="Telephone" aria-describedby="sizing-addon3" name="telephone" [(ngModel)]="telephone">
+        </div>
+        <div class="input-group input-group-sm" style="padding-top: 10px">
+          <span class="input-group-addon" id="sizing-addon3">Email</span>
+          <input type="text" class="form-control" placeholder="Email" aria-describedby="sizing-addon3" name="email" [(ngModel)]="email">
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</div>
+
+<div class="panel panel-default">
+  <div class="panel-heading">Departements</div>
+  <div class="panel-body">
+    Departements
+  </div>
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <td>#</td>
+        <td>Code</td>
+        <td>Departement</td>
+        <td>Abreviation</td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          1
+        </td>
+        <td>
+          <input type="text" name="codeDep" class="form-control" [(ngModel)]="codeDep"/>
+        </td>
+        <td>
+          <input type="text" name="nameDep" class="form-control" [(ngModel)]="nameDep"/>
+        </td>
+        <td>
+          <input type="text" name="AbrevDep" class="form-control" [(ngModel)]="AbrevDep"/>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          2
+        </td>
+        <td>
+          <input type="text" name="codeDep" class="form-control" [(ngModel)]="codeDep"/>
+        </td>
+        <td>
+          <input type="text" name="nameDep" class="form-control" [(ngModel)]="codeDep"/>
+        </td>
+        <td>
+          <input type="text" name="AbrevDep" class="form-control" [(ngModel)]="codeDep"/>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          3
+        </td>
+        <td>
+          <input type="text" name="codeDep" class="form-control" />
+        </td>
+        <td>
+          <input type="text" name="nameDep" class="form-control" />
+        </td>
+        <td>
+          <input type="text" name="AbrevDep" class="form-control" />
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="panel panel-default">
+  <div class="panel-heading">Classe</div>
+  <div class="panel-body">
+    Classe
+  </div>
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <td>#</td>
+        <td>Code</td>
+        <td>Classe</td>
+        <td>Abreviation</td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          1
+        </td>
+        <td>
+          <input type="text" name="codeClss" class="form-control" />
+        </td>
+        <td>
+          <input type="text" name="nameClss" class="form-control" />
+        </td>
+        <td>
+          <input type="text" name="AbrevClss" class="form-control" />
+        </td>
+      </tr>
+      <tr>
+        <td>
+          2
+        </td>
+        <td>
+          <input type="text" name="codeClss" class="form-control" />
+        </td>
+        <td>
+          <input type="text" name="nameClss" class="form-control" />
+        </td>
+        <td>
+          <input type="text" name="AbrevClss" class="form-control" />
+        </td>
+      </tr>
+      <tr>
+        <td>
+          3
+        </td>
+        <td>
+          <input type="text" name="codeClss" class="form-control" />
+        </td>
+        <td>
+          <input type="text" name="nameClss" class="form-control" />
+        </td>
+        <td>
+          <input type="text" name="AbrevClss" class="form-control" />
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="panel panel-default">
+  <div class="panel-heading">Cours</div>
+  <div class="panel-body">
+    Cours
+  </div>
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <td>#</td>
+        <td>Code</td>
+        <td>Cours</td>
+        <td>Abreviation</td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          1
+        </td>
+        <td>
+          <input type="text" name="codeCrs" class="form-control" />
+        </td>
+        <td>
+          <input type="text" name="nameCrs" class="form-control" />
+        </td>
+        <td>
+          <input type="text" name="AbrevCrs" class="form-control" />
+        </td>
+      </tr>
+      <tr>
+        <td>
+          2
+        </td>
+        <td>
+          <input type="text" name="codeCrs" class="form-control" />
+        </td>
+        <td>
+          <input type="text" name="nameCrs" class="form-control" />
+        </td>
+        <td>
+          <input type="text" name="AbrevCrs" class="form-control" />
+        </td>
+      </tr>
+      <tr>
+        <td>
+          3
+        </td>
+        <td>
+          <input type="text" name="codeCrs" class="form-control" />
+        </td>
+        <td>
+          <input type="text" name="nameCrs" class="form-control" />
+        </td>
+        <td>
+          <input type="text" name="AbrevCrs" class="form-control" />
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
