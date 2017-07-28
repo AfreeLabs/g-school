@@ -1,29 +1,31 @@
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs/Observable';
-import { AngularFireAuth } from 'angularfire2/auth';
-import * as firebase from 'firebase/app';
+import {Http, Headers} from '@angular/http';
+import 'rxjs/add/operator/map';
+// import {tokenNotExpired} from 'angular2-jwt';
 
 @Injectable()
 export class AuthServiceService {
 
-  user: Observable<firebase.User>;
+  constructor(private http: Http) { }
 
-  userEmail: string;
+  // loginUser(user) {
+  //   let headers = new Headers();
+  //   headers.append('Content-Type', 'application/json');
+  //   return this.http.post('http://localhost:8000/api/v1/api-token-auth/', user, {headers: headers})
+  //   .map(res => res.json());
+  // }
 
-  constructor(public afAuth: AngularFireAuth) { 
-    this.user = afAuth.authState;
-  }
+  // storeToken(token) {
+    // store token in localStorage to keep user logged in between page refereshes
+  //   localStorage.setItem('id_token', token);
+  // }
 
+  // loggedIn() {
+  //   // return tokenNotExpired('id_token');
+  // }
 
-  login(email: string, password: string) {
-    // this.afAuth.auth.signInWithPopup(new firebase.auth.GoogleAuthProvider());
-    this.afAuth.auth.signInWithEmailAndPassword(email, password)
-    this.userEmail = this.afAuth.auth.currentUser.email
-    console.log('Wellcom! You are now logged in')
-  }
-
-  logout() {
-    this.afAuth.auth.signOut();
-  }
-  
+  // logoutUser(){
+  //   // Clear localStorage to remove the token
+  //   localStorage.clear();
+  // }
 }

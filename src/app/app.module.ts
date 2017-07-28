@@ -18,13 +18,16 @@ import { NavbarComponent } from './components/partials/navbar/navbar.component';
 import { SaisieComponent } from './components/admition/saisie/saisie.component';
 import { InscriptionComponent } from './components/admition/inscription/inscription.component';
 import { DepartementComponent } from './components/departement/departement.component';
-import { ClasseComponent } from './components/departement/classe/classe.component';
 import { DepConfigComponent } from './components/departement/dep-config/dep-config.component';
 import { CoursComponent } from './components/configuration/cours/cours.component';
 import { ProgrammeComponent } from './components/configuration/programme/programme.component';
 import { InstructeurComponent } from './components/configuration/instructeur/instructeur.component';
 import { AnneeAcademiqueComponent } from './components/configuration/annee-academique/annee-academique.component';
 import { EcoleComponent } from './components/configuration/ecole/ecole.component';
+import { StudentComponent } from './components/student/student.component';
+import { EmployeesComponent } from './components/employees/employees.component';
+import { RoomsComponent } from './components/departement/rooms/rooms.component';
+import { ClassLevelsComponent } from './components/departement/class-levels/class-levels.component';
 
 
 export const firebaseConfig = {
@@ -53,8 +56,21 @@ const appRoutes: Routes = [
   {path: 'departement', component: DepartementComponent,
     children: [
       { path: '', redirectTo: 'departement', pathMatch: 'full'},
-      { path: 'classe', component: ClasseComponent},
+      { path: 'departements', component: DepartementComponent},
+      { path: 'rooms', component: RoomsComponent},
+      { path: 'classLvls', component: ClassLevelsComponent},
       { path: 'depConfig', component: DepConfigComponent}
+    ]
+
+  },
+
+  {path: 'student', component: StudentComponent,
+    children: [
+      { path: '', redirectTo: 'student', pathMatch: 'full'},
+      { path: 'exams', component: DepartementComponent},
+      { path: 'grades', component: RoomsComponent},
+      { path: 'payment', component: ClassLevelsComponent},
+      { path: 'students', component: DepConfigComponent}
     ]
 
   },
@@ -83,13 +99,16 @@ const appRoutes: Routes = [
     SaisieComponent,
     InscriptionComponent,
     DepartementComponent,
-    ClasseComponent,
     DepConfigComponent,
     CoursComponent,
     ProgrammeComponent,
     InstructeurComponent,
     AnneeAcademiqueComponent,
-    EcoleComponent
+    EcoleComponent,
+    StudentComponent,
+    EmployeesComponent,
+    RoomsComponent,
+    ClassLevelsComponent
   ],
   imports: [
     BrowserModule,

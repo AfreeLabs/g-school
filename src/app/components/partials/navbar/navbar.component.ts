@@ -13,8 +13,8 @@ export class NavbarComponent implements OnInit {
   constructor(
     private AuthService: AuthServiceService,
   ) { 
-    this.email = this.AuthService.userEmail;
-    console.log(this.email)
+    // this.email = this.AuthService.userEmail;
+    // console.log(this.email)
   }
 
   ngOnInit() {
