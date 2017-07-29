@@ -1,78 +1,99 @@
 <ol class="breadcrumb">
   <li><a href="#">Home</a></li>
   <!--<li><a href="#">Adminition</a></li>-->
-  <li class="active">Inscritption</li>
+  <li class="active">Admission</li>
 </ol>
 
- <div class="input-group input-group-sm" style="padding-top: 10px">
-  <span class="input-group-addon" id="sizing-addon3">Ajouter un Etudiant</span>
-  <select class="form-control">
-    <option>----</option>
-  </select>
+<div class="panel panel-default">
+  <div class="panel-body">
+    <div class="row">
+      <div class="col-md-6">
+        <div class="alert alert-info" role="alert">
+          Please select a student to get info
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="input-group input-group-sm" style="padding-top: 10px">
+          <span class="input-group-addon" id="sizing-addon3">Add student</span>
+          <select class="form-control">
+            <option>----</option>
+          </select>
+        </div>
+        <div class="input-group input-group-sm" style="padding-top: 10px">
+          <span class="input-group-addon" id="sizing-addon3">Matricule</span>
+          <input type="text" class="form-control" placeholder="Matricule" aria-describedby="sizing-addon3" readonly>
+        </div>
+      </div>
+    </div>
+    
+  </div>
 </div>
 
+<div class="panel panel-default">
+  <div class="panel-body">
+    <div class="row">
+      <div class="col-md-4">
+        <img src="../../../assets/images/avatar.png" alt="..." class="img-responsive img-thumbnail" style="width:145px; height:145px">
+        <!-- <button class="btn btn-default" type="submit" style="margin:3px">Choisire un fichier</button> -->
+      </div>
+      <div class="col-md-8">
+        <div class="input-group input-group-sm" style="padding-top: 10px">
+          <span class="input-group-addon" id="sizing-addon3">ID Card number</span>
+          <input type="text" class="form-control" placeholder="Tuteur" aria-describedby="sizing-addon3">
+        </div>
+        <div class="input-group input-group-sm" style="padding-top: 10px">
+          <span class="input-group-addon" id="sizing-addon3">First name</span>
+          <input type="text" class="form-control" placeholder="First name" aria-describedby="sizing-addon3">
+        </div>
 
-<div class="input-group input-group-sm" style="padding-top: 10px">
-  <span class="input-group-addon" id="sizing-addon3">Nom</span>
-  <input type="text" class="form-control" placeholder="Username" aria-describedby="sizing-addon3">
+        <div class="input-group input-group-sm" style="padding-top: 10px">
+          <span class="input-group-addon" id="sizing-addon3">Middle name</span>
+          <input type="text" class="form-control" placeholder="Middle name" aria-describedby="sizing-addon3">
+        </div>
+
+        <div class="input-group input-group-sm" style="padding-top: 10px">
+          <span class="input-group-addon" id="sizing-addon3">Last name</span>
+          <input type="text" class="form-control" placeholder="Last name" aria-describedby="sizing-addon3">
+        </div>
+
+        <div class="input-group input-group-sm" style="padding-top: 10px">
+          <span class="input-group-addon" id="sizing-addon3">Sexe</span>
+          <input type="text" class="form-control" placeholder="Username" aria-describedby="sizing-addon3">
+        </div>
+
+        <div class="input-group input-group-sm" style="padding-top: 10px">
+          <span class="input-group-addon" id="sizing-addon3">Date de naissance</span>
+          <input type="text" class="form-control" placeholder="Username" aria-describedby="sizing-addon3">
+        </div>
+
+        <div class="input-group input-group-sm" style="padding-top: 10px">
+          <span class="input-group-addon" id="sizing-addon3">Lieu de naissance</span>
+          <input type="text" class="form-control" placeholder="Lieu de naissance" aria-describedby="sizing-addon3">
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
 
-<div class="input-group input-group-sm" style="padding-top: 10px">
-  <span class="input-group-addon" id="sizing-addon3">Prenom</span>
-  <input type="text" class="form-control" placeholder="Username" aria-describedby="sizing-addon3">
+<div class="panel panel-default">
+  <div class="panel">
+    <div class="input-group input-group-sm" style="padding-top: 10px">
+      <span class="input-group-addon" id="sizing-addon3">Filliation</span>
+      <input type="text" class="form-control" placeholder="Filliation" aria-describedby="sizing-addon3">
+    </div>
+
+    <div class="input-group input-group-sm" style="padding-top: 10px">
+      <span class="input-group-addon" id="sizing-addon3">Tuteur</span>
+      <input type="text" class="form-control" placeholder="Tuteur" aria-describedby="sizing-addon3">
+    </div>
+  </div>
 </div>
 
-<div class="input-group input-group-sm" style="padding-top: 10px">
-  <span class="input-group-addon" id="sizing-addon3">Sexe</span>
-  <input type="text" class="form-control" placeholder="Username" aria-describedby="sizing-addon3">
+<div class="panel panel-default">
+  <div class="panel-body navbar-right">
+    <button class="btn btn-success" type="submit"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span>Save and add another</button>
+    <button class="btn btn-success" type="submit"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span>Save</button>
+    <button class="btn btn-danger" type="submit"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span>Cancel</button>
+  </div>
 </div>
 
-<div class="input-group input-group-sm" style="padding-top: 10px">
-  <span class="input-group-addon" id="sizing-addon3">Date de naissance</span>
-  <input type="text" class="form-control" placeholder="Username" aria-describedby="sizing-addon3">
-</div>
-
-<div class="input-group input-group-sm" style="padding-top: 10px">
-  <span class="input-group-addon" id="sizing-addon3">Lieu de naissance</span>
-  <input type="text" class="form-control" placeholder="Lieu de naissance" aria-describedby="sizing-addon3">
-</div>
-
-<div class="input-group input-group-sm" style="padding-top: 10px">
-  <span class="input-group-addon" id="sizing-addon3">Filliation</span>
-  <input type="text" class="form-control" placeholder="Filliation" aria-describedby="sizing-addon3">
-</div>
-
-<div class="input-group input-group-sm" style="padding-top: 10px">
-  <span class="input-group-addon" id="sizing-addon3">Tuteur</span>
-  <input type="text" class="form-control" placeholder="Tuteur" aria-describedby="sizing-addon3">
-</div>
-
-<!--<div class="input-group input-group-sm" style="padding-top: 10px">
-  <span class="input-group-addon" id="sizing-addon3">Telephone</span>
-  <input type="text" class="form-control" placeholder="Telephone" aria-describedby="sizing-addon3">
-</div>-->
-
-<!--<div class="input-group input-group-sm" style="padding-top: 10px">
-  <span class="input-group-addon" id="sizing-addon3">Email</span>
-  <input type="text" class="form-control" placeholder="Email" aria-describedby="sizing-addon3">
-</div>
-
-<div class="input-group input-group-sm" style="padding-top: 10px">
-  <span class="input-group-addon" id="sizing-addon3">Groupe sangain</span>
-  <input type="text" class="form-control" placeholder="Username" aria-describedby="sizing-addon3">
-</div>
-
-<div class="input-group input-group-sm" style="padding-top: 10px">
-  <span class="input-group-addon" id="sizing-addon3">@</span>
-  <input type="text" class="form-control" placeholder="Username" aria-describedby="sizing-addon3">
-</div>
-
-<div class="input-group input-group-sm" style="padding-top: 10px">
-  <span class="input-group-addon" id="sizing-addon3">@</span>
-  <input type="text" class="form-control" placeholder="Username" aria-describedby="sizing-addon3">
-</div>
-
-<div class="input-group input-group-sm" style="padding-top: 10px">
-  <span class="input-group-addon" id="sizing-addon3">@</span>
-  <input type="text" class="form-control" placeholder="Username" aria-describedby="sizing-addon3">
-</div>-->

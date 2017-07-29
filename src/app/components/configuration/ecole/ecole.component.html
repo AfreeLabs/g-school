@@ -5,45 +5,85 @@
 <div class="panel panel-default">
   <div class="panel-body">
     <div class="row">
-      <div class="col-md-6">
-        <div class="input-group input-group-sm">
+      <div class="col-md-4">
+        <img src="../../../assets/images/g-school.png" alt="esponsive image" class="img-thumbnail" style="width:140px; height: 140px">
+      </div>
+      <div class="col-md-8">
+         <div class="input-group input-group-sm">
           <span class="input-group-addon" id="sizing-addon3">Nom de l'etablissement</span>
-          <input type="text" class="form-control" placeholder="Nom de l'etablissement" aria-describedby="sizing-addon3" name="etsName" [(ngModel)]="etsName">
+          <input type="text" class="form-control" placeholder="Nom de l'etablissement" aria-describedby="sizing-addon3" name="etsName">
         </div>
         <div class="input-group input-group-sm" style="padding-top: 10px">
           <span class="input-group-addon" id="sizing-addon3">Abreviation</span>
-          <input type="text" class="form-control" placeholder="Abreviation" aria-describedby="sizing-addon3" name="etsAbrv" [(ngModel)]="etsAbrv">
+          <input type="text" class="form-control" placeholder="Abreviation" aria-describedby="sizing-addon3" name="etsAbrv">
         </div>
         <div class="input-group input-group-sm" style="padding-top: 10px">
-          <span class="input-group-addon" id="sizing-addon3">Annee Scolaire</span>
-          <input type="text" class="form-control" placeholder="Annee Scolaire" aria-describedby="sizing-addon3" name="annSco" [(ngModel)]="annSco">
+          <span class="input-group-addon" id="sizing-addon3">Slogan</span>
+          <input type="text" class="form-control" placeholder="Slogan" aria-describedby="sizing-addon3" name="annSco">
         </div>
-
       </div>
-      <div class="col-md-6">
-        <div class="input-group input-group-sm">
-          <span class="input-group-addon" id="sizing-addon3">Adresse</span>
-          <input type="text" class="form-control" placeholder="Adresse" aria-describedby="sizing-addon3" name="adress" [(ngModel)]="adress">
+  </div>
+  <div class="row">
+      <div class="col-md-6"> 
+         <div class="input-group input-group-sm" style="padding-top: 10px">
+          <span class="input-group-addon" id="sizing-addon3">Adress 1</span>
+          <input type="text" class="form-control" placeholder="Adress 1" aria-describedby="sizing-addon3" name="annSco">
+        </div> 
+        
+        <div class="input-group input-group-sm" style="padding-top: 10px">
+          <span class="input-group-addon" id="sizing-addon3">Phone</span>
+          <input type="text" class="form-control" placeholder="Phone" aria-describedby="sizing-addon3" name="email">
         </div>
         <div class="input-group input-group-sm" style="padding-top: 10px">
-          <span class="input-group-addon" id="sizing-addon3">Telephone</span>
-          <input type="text" class="form-control" placeholder="Telephone" aria-describedby="sizing-addon3" name="telephone" [(ngModel)]="telephone">
+          <span class="input-group-addon" id="sizing-addon3">Website</span>
+          <input type="text" class="form-control" placeholder="Website" aria-describedby="sizing-addon3" name="email">
+        </div>
+        <div class="input-group input-group-sm" style="padding-top: 10px">
+          <span class="input-group-addon" id="sizing-addon3">Fax</span>
+          <input type="text" class="form-control" placeholder="Website" aria-describedby="sizing-addon3" name="email">
+        </div>
+        <div class="input-group input-group-sm" style="padding-top: 10px">
+          <span class="input-group-addon" id="sizing-addon3">Registration number</span>
+          <input type="text" class="form-control" placeholder="Registration number" aria-describedby="sizing-addon3" name="email">
+        </div>
+          
+      </div>
+      <div class="col-md-6"> 
+        <div class="input-group input-group-sm" style="padding-top: 10px">
+          <span class="input-group-addon" id="sizing-addon3">Adress 2</span>
+          <input type="text" class="form-control" placeholder="Adress 2" aria-describedby="sizing-addon3" name="annSco">
         </div>
         <div class="input-group input-group-sm" style="padding-top: 10px">
           <span class="input-group-addon" id="sizing-addon3">Email</span>
-          <input type="text" class="form-control" placeholder="Email" aria-describedby="sizing-addon3" name="email" [(ngModel)]="email">
+          <input type="text" class="form-control" placeholder="Email" aria-describedby="sizing-addon3" name="telephone">
+        </div>
+        <div class="input-group input-group-sm" style="padding-top: 10px">
+          <span class="input-group-addon" id="sizing-addon3">Tax ID</span>
+          <input type="text" class="form-control" placeholder="Tax ID" aria-describedby="sizing-addon3" name="email">
+        </div>
+        <div class="input-group input-group-sm" style="padding-top: 10px">
+          <span class="input-group-addon" id="sizing-addon3">Authorization number</span>
+          <input type="text" class="form-control" placeholder="Authorization number" aria-describedby="sizing-addon3" name="email">
         </div>
       </div>
-
-    </div>
+     </div>
   </div>
-
 </div>
 
 <div class="panel panel-default">
-  <div class="panel-heading">Departements</div>
-  <div class="panel-body">
+  <div class="panel-heading">
     Departements
+    <span class="pull-right">
+      <button class="btn btn-success" type="submit" style="margin: -6px;">
+        <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+        VIEW DEPARTEMENTS
+      </button>
+    </span>
+  </div>
+  <div class="panel-body">
+    <div class="alert alert-info" role="alert">
+      <p>Add departements</p>
+    </div>
   </div>
   <table class="table table-bordered">
     <thead>
@@ -52,6 +92,7 @@
         <td>Code</td>
         <td>Departement</td>
         <td>Abreviation</td>
+        <td>Fees</td>
       </tr>
     </thead>
     <tbody>
@@ -60,13 +101,16 @@
           1
         </td>
         <td>
-          <input type="text" name="codeDep" class="form-control" [(ngModel)]="codeDep"/>
+          <input type="text" name="Depcode" class="form-control"/>
         </td>
         <td>
-          <input type="text" name="nameDep" class="form-control" [(ngModel)]="nameDep"/>
+          <input type="text" name="Depname" class="form-control"/>
         </td>
         <td>
-          <input type="text" name="AbrevDep" class="form-control" [(ngModel)]="AbrevDep"/>
+          <input type="text" name="DepAbrev" class="form-control"/>
+        </td>
+        <td>
+          <input type="text" name="DepFees" class="form-control"/>
         </td>
       </tr>
       <tr>
@@ -82,6 +126,9 @@
         <td>
           <input type="text" name="AbrevDep" class="form-control" [(ngModel)]="codeDep"/>
         </td>
+        <td>
+          <input type="text" name="DepFees" class="form-control"/>
+        </td>
       </tr>
       <tr>
         <td>
@@ -96,23 +143,36 @@
         <td>
           <input type="text" name="AbrevDep" class="form-control" />
         </td>
+        <td>
+          <input type="text" name="DepFees" class="form-control"/>
+        </td>
       </tr>
     </tbody>
   </table>
 </div>
 
 <div class="panel panel-default">
-  <div class="panel-heading">Classe</div>
+  <div class="panel-heading">
+    Rooms
+    <span class="pull-right">
+      <button class="btn btn-success" type="submit" style="margin: -6px;">
+        <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+        VIEW ROOMS
+      </button>
+    </span>
+  </div>
   <div class="panel-body">
-    Classe
+    <div class="alert alert-info" role="alert">
+      <p>Add Rooms</p>
+    </div>
   </div>
   <table class="table table-bordered">
     <thead>
       <tr>
         <td>#</td>
         <td>Code</td>
-        <td>Classe</td>
-        <td>Abreviation</td>
+        <td>Rooms</td>
+        <td>Place</td>
       </tr>
     </thead>
     <tbody>
@@ -121,13 +181,13 @@
           1
         </td>
         <td>
-          <input type="text" name="codeClss" class="form-control" />
+          <input type="text" name="Clsscode" class="form-control" />
         </td>
         <td>
-          <input type="text" name="nameClss" class="form-control" />
+          <input type="text" name="Clssname" class="form-control" />
         </td>
         <td>
-          <input type="text" name="AbrevClss" class="form-control" />
+          <input type="text" name="ClssAbrev" class="form-control" />
         </td>
       </tr>
       <tr>
@@ -135,7 +195,7 @@
           2
         </td>
         <td>
-          <input type="text" name="codeClss" class="form-control" />
+          <input type="text" name="Clsscode" class="form-control" />
         </td>
         <td>
           <input type="text" name="nameClss" class="form-control" />
@@ -149,7 +209,7 @@
           3
         </td>
         <td>
-          <input type="text" name="codeClss" class="form-control" />
+          <input type="text" name="Clsscode" class="form-control" />
         </td>
         <td>
           <input type="text" name="nameClss" class="form-control" />
@@ -163,17 +223,27 @@
 </div>
 
 <div class="panel panel-default">
-  <div class="panel-heading">Cours</div>
+  <div class="panel-heading">
+    Subjects
+    <span class="pull-right">
+      <button class="btn btn-success" type="submit" style="margin: -6px;">
+        <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+        VIEW SUBJECTS
+      </button>
+    </span>
+  </div>
   <div class="panel-body">
-    Cours
+    <div class="alert alert-info" role="alert">
+      <p>Add Subjects</p>
+    </div>
   </div>
   <table class="table table-bordered">
     <thead>
       <tr>
         <td>#</td>
         <td>Code</td>
-        <td>Cours</td>
-        <td>Abreviation</td>
+        <td>Subjects</td>
+        <td>Teacher</td>
       </tr>
     </thead>
     <tbody>

@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ClasseComponent } from './classe.component';
+import { ClassLevelsComponent } from './class-levels.component';
 
-describe('ClasseComponent', () => {
-  let component: ClasseComponent;
-  let fixture: ComponentFixture<ClasseComponent>;
+describe('ClassLevelsComponent', () => {
+  let component: ClassLevelsComponent;
+  let fixture: ComponentFixture<ClassLevelsComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ClasseComponent ]
+      declarations: [ ClassLevelsComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ClasseComponent);
+    fixture = TestBed.createComponent(ClassLevelsComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
