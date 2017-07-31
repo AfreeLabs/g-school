@@ -6,6 +6,7 @@ import {RouterModule, Routes} from '@angular/router';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { AngularFireAuthModule } from 'angularfire2/auth';
+import { AuthGuard } from './guards/auth.guard';
 
 import { AuthServiceService } from './services/auth-service.service'
 import { AppComponent } from './app.component';
@@ -30,21 +31,10 @@ import { RoomsComponent } from './components/departement/rooms/rooms.component';
 import { ClassLevelsComponent } from './components/departement/class-levels/class-levels.component';
 
 
-export const firebaseConfig = {
-  // Initialize Firebase
-    apiKey: "AIzaSyC5IlDf9C79P7PkARpBOjX87HKWLY2SivQ",
-    authDomain: "projetgmtg.firebaseapp.com",
-    databaseURL: "https://projetgmtg.firebaseio.com",
-    projectId: "projetgmtg",
-    storageBucket: "projetgmtg.appspot.com",
-    messagingSenderId: "525399268411"
-}
-
-
 const appRoutes: Routes = [
   {path: '', component: LoginComponent},
-  {path: 'home', component: HomeComponent},
-  {path: 'admition', component: AdmitionComponent,
+  { path: 'home', component: HomeComponent, canActivate: [AuthGuard]},
+  {path: 'admition', component: AdmitionComponent, canActivate:[AuthGuard],
     children: [
       { path: '', redirectTo: 'admition', pathMatch: 'full'},
       { path: 'saisie', component: SaisieComponent},
@@ -53,7 +43,8 @@ const appRoutes: Routes = [
 
   },
 
-  {path: 'departement', component: DepartementComponent,
+  {
+    path: 'departement', component: DepartementComponent, canActivate: [AuthGuard],
     children: [
       { path: '', redirectTo: 'departement', pathMatch: 'full'},
       { path: 'departements', component: DepartementComponent},
@@ -64,7 +55,8 @@ const appRoutes: Routes = [
 
   },
 
-  {path: 'student', component: StudentComponent,
+  {
+    path: 'student', component: StudentComponent, canActivate: [AuthGuard],
     children: [
       { path: '', redirectTo: 'student', pathMatch: 'full'},
       { path: 'exams', component: DepartementComponent},
@@ -75,7 +67,8 @@ const appRoutes: Routes = [
 
   },
 
-  {path: 'configuration', component: ConfigurationComponent,
+  {
+    path: 'configuration', component: ConfigurationComponent, canActivate: [AuthGuard],
     children: [
       { path: '', redirectTo: 'configuration', pathMatch: 'full'},
       { path: 'cours', component: CoursComponent},
@@ -115,11 +108,10 @@ const appRoutes: Routes = [
     FormsModule,
     HttpModule,
     RouterModule.forRoot(appRoutes),
-    AngularFireModule.initializeApp(firebaseConfig),
     AngularFireAuthModule,
     AngularFireDatabaseModule,
   ],
-  providers: [AuthServiceService],
+  providers: [AuthServiceService, AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

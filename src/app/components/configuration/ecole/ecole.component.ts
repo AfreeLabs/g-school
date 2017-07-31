@@ -1,88 +1,66 @@
 import { Component, OnInit } from '@angular/core';
-import * as firebase from "firebase";
-import { AngularFireDatabase, FirebaseObjectObservable } from 'angularfire2/database';
+import { Http, Response } from '@angular/http';
+import { FetchData } from '../../../services/FetchData.service';
 
 @Component({
   selector: 'app-ecole',
   templateUrl: './ecole.component.html',
-  styleUrls: ['./ecole.component.css']
+  styleUrls: ['./ecole.component.css'],
+  providers: [FetchData],
 })
 export class EcoleComponent implements OnInit {
   
-  item: FirebaseObjectObservable<any>;
-  database = firebase.database();
-  ref = this.database.ref("/Ecole/");
-  departementRef = this.ref.child("Departements");
-  classRef = this.ref.child("Classes");
-  coursRef = this.ref.child("Cours")
-
-  etsName: string;
-  etsAbrv: string;
-  annSco: string;
-  email: string;
-  adress: string;
-  telephone: string;
+  data = "";
+  Http = null;
+  Response = null;
+  items = "";
+  count = 0;
+  itemCount = 0;
 
 
-  constructor(db: AngularFireDatabase) { 
-    this.item = db.object('/Ecole/', {preserveSnapshot: true});
-    this.item.subscribe(snapshot => {
-      console.log(snapshot.key)
-      console.log(snapshot.val())
-      this.etsName = snapshot.val().etsName,
-      this.etsAbrv = snapshot.val().etsAbrv,
-      this.annSco = snapshot.val().annSco,
-      this.adress = snapshot.val().adress,
-      this.telephone = snapshot.val().telephone,
-      this.email = snapshot.val().email
-
-    });
+  constructor(private fetchData: FetchData) { 
+    
   }
 
   ngOnInit() {
+    this.Http = Http;
+    this.Response = Response;
+    let endPoint = 'api/v1/schoolschool/';
+
+    this.fetchData.get(endPoint)
+      .subscribe(
+      (data) => {
+        // we assign the tab now
+        this.setItems(data);
+        this.items = data;
+        this.itemCount = this.count = this.items.length;
+      },
+      (error) => {
+        console.error(error);
+      });
+
+
+    console.log('ok ', this.items);
+
   }
 
-  onSave(){
-    this.ref.set({
-      etsName: this.etsName,
-      etsAbrv: this.etsAbrv,
-      annSco: this.annSco,
-      email: this.email,
-      adress: this.adress,
-      telephone: this.telephone,  
-    });
+  reloadItems(params) {
+    // just reinit the component that gonna fetch and reload the data
+    this.ngOnInit();
   }
+  rowClick(param) {
 
-  // onSave(){
-  //   this.departementRef.push({
-  //     etsName: this.etsName,
-  //     etsAbrv: this.etsAbrv,
-  //     annSco: this.annSco,
-  //     email: this.email,
-  //     adress: this.adress,
-  //     telephone: this.telephone, 
-  //   });
-  // }
-
-  saveCours(){
-    this.coursRef.push({
-      
-    });
   }
+  rowDoubleClick() {
 
-  saveClasses(){
-    this.classRef.push({
-      
-    });
   }
-
-  saveDepartements(){
-    this.departementRef.push({
-      
-    });
-  }
-
   
+  setItems(item) {
+    this.items = item;
+    // this.frstName = this.items[0].firstName;
+    console.log('ok ', this.items);
+  }
+
 }
 
 
