@@ -3,21 +3,18 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import {RouterModule, Routes} from '@angular/router';
-import { AngularFireModule } from 'angularfire2';
-import { AngularFireDatabaseModule } from 'angularfire2/database';
-import { AngularFireAuthModule } from 'angularfire2/auth';
-import { AuthGuard } from './guards/auth.guard';
 
-import { AuthServiceService } from './services/auth-service.service'
+// import { AuthGuard } from './guards/auth.guard';
+import { FlashMessagesService } from 'angular2-flash-messages';
+import { FetchData } from './services/FetchData.service';
+
+// import { AuthServiceService } from './services/auth-service.service'
 import { AppComponent } from './app.component';
 import { LoginComponent } from './components/login/login.component';
 import { HomeComponent } from './components/home/home.component';
 import { SidenavComponent } from './components/partials/sidenav/sidenav.component';
-import { AdmitionComponent } from './components/admition/admition.component';
 import { ConfigurationComponent } from './components/configuration/configuration.component';
 import { NavbarComponent } from './components/partials/navbar/navbar.component';
-import { SaisieComponent } from './components/admition/saisie/saisie.component';
-import { InscriptionComponent } from './components/admition/inscription/inscription.component';
 import { DepartementComponent } from './components/departement/departement.component';
 import { DepConfigComponent } from './components/departement/dep-config/dep-config.component';
 import { CoursComponent } from './components/configuration/cours/cours.component';
@@ -29,22 +26,26 @@ import { StudentComponent } from './components/student/student.component';
 import { EmployeesComponent } from './components/employees/employees.component';
 import { RoomsComponent } from './components/departement/rooms/rooms.component';
 import { ClassLevelsComponent } from './components/departement/class-levels/class-levels.component';
+import { AdmissionComponent } from './components/admission/admission.component';
+import { RegistrationComponent } from './components/admission/registration/registration.component';
+import { InscriptionComponent } from './components/admission/inscription/inscription.component';
+import { BatchComponent } from './components/configuration/batch/batch.component';
 
 
 const appRoutes: Routes = [
   {path: '', component: LoginComponent},
-  { path: 'home', component: HomeComponent, canActivate: [AuthGuard]},
-  {path: 'admition', component: AdmitionComponent, canActivate:[AuthGuard],
+  { path: 'home', component: HomeComponent},
+  {path: 'admission', component: AdmissionComponent,
     children: [
       { path: '', redirectTo: 'admition', pathMatch: 'full'},
-      { path: 'saisie', component: SaisieComponent},
+      { path: 'registration', component: RegistrationComponent},
       { path: 'inscription', component: InscriptionComponent}
     ]
 
   },
 
   {
-    path: 'departement', component: DepartementComponent, canActivate: [AuthGuard],
+    path: 'departement', component: DepartementComponent,
     children: [
       { path: '', redirectTo: 'departement', pathMatch: 'full'},
       { path: 'departements', component: DepartementComponent},
@@ -56,7 +57,7 @@ const appRoutes: Routes = [
   },
 
   {
-    path: 'student', component: StudentComponent, canActivate: [AuthGuard],
+    path: 'student', component: StudentComponent,
     children: [
       { path: '', redirectTo: 'student', pathMatch: 'full'},
       { path: 'exams', component: DepartementComponent},
@@ -68,14 +69,15 @@ const appRoutes: Routes = [
   },
 
   {
-    path: 'configuration', component: ConfigurationComponent, canActivate: [AuthGuard],
+    path: 'configuration', component: ConfigurationComponent,
     children: [
       { path: '', redirectTo: 'configuration', pathMatch: 'full'},
       { path: 'cours', component: CoursComponent},
       { path: 'dep-config', component: DepConfigComponent},
       { path: 'programme', component: ProgrammeComponent},
       { path: 'instructeur', component: InstructeurComponent},
-      { path: 'ecole', component: EcoleComponent}
+      { path: 'ecole', component: EcoleComponent},
+      { path: 'batch', component: BatchComponent }
     ]
   },
 ]
@@ -86,10 +88,8 @@ const appRoutes: Routes = [
     LoginComponent,
     HomeComponent,
     SidenavComponent,
-    AdmitionComponent,
     ConfigurationComponent,
     NavbarComponent,
-    SaisieComponent,
     InscriptionComponent,
     DepartementComponent,
     DepConfigComponent,
@@ -101,17 +101,18 @@ const appRoutes: Routes = [
     StudentComponent,
     EmployeesComponent,
     RoomsComponent,
-    ClassLevelsComponent
+    ClassLevelsComponent,
+    AdmissionComponent,
+    RegistrationComponent,
+    BatchComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
     RouterModule.forRoot(appRoutes),
-    AngularFireAuthModule,
-    AngularFireDatabaseModule,
   ],
-  providers: [AuthServiceService, AuthGuard],
+  providers: [FlashMessagesService, FetchData],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import * as firebase from "firebase";
-import { AngularFireDatabase, FirebaseObjectObservable } from 'angularfire2/database';
 
 @Component({
   selector: 'app-dep-config',
@@ -8,11 +7,6 @@ import { AngularFireDatabase, FirebaseObjectObservable } from 'angularfire2/data
   styleUrls: ['./dep-config.component.css']
 })
 export class DepConfigComponent implements OnInit {
-
-  item: FirebaseObjectObservable<any>;
-  database = firebase.database();
-  ref = this.database.ref("/Ecole/");
-  departementRef = this.ref.child("Departements/");
 
   depName: string;
   depAbrv: string;
@@ -38,13 +32,7 @@ export class DepConfigComponent implements OnInit {
   // }
 
   onSave(){
-    this.departementRef.push({
-      depName: this.depName,
-      depAbrv: this.depAbrv,
-      depRspnsbl: this.depRspnsbl,
-      depPrncpl: this.depPrncpl,
-      introDep: this.introDep, 
-    });
+    
   }
 
 }
