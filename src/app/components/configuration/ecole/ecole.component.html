@@ -11,15 +11,15 @@
       <div class="col-md-8">
          <div class="input-group input-group-sm">
           <span class="input-group-addon" id="sizing-addon3">Nom de l'etablissement</span>
-          <input type="text" class="form-control" placeholder="Nom de l'etablissement" aria-describedby="sizing-addon3" name="etsName">
+          <input type="text" class="form-control" placeholder="Nom de l'etablissement" aria-describedby="sizing-addon3" name="schoolName" [(ngModel)]="schoolName" value="{{element.name}}">
         </div>
         <div class="input-group input-group-sm" style="padding-top: 10px">
           <span class="input-group-addon" id="sizing-addon3">Abreviation</span>
-          <input type="text" class="form-control" placeholder="Abreviation" aria-describedby="sizing-addon3" name="etsAbrv">
+          <input type="text" class="form-control" placeholder="Abreviation" aria-describedby="sizing-addon3" name="schoolAbrev" [(ngModel)]="schoolAbrev" value="{{element.start_date}}">
         </div>
         <div class="input-group input-group-sm" style="padding-top: 10px">
           <span class="input-group-addon" id="sizing-addon3">Slogan</span>
-          <input type="text" class="form-control" placeholder="Slogan" aria-describedby="sizing-addon3" name="annSco">
+          <input type="text" class="form-control" placeholder="Slogan" aria-describedby="sizing-addon3" name="SchoolSlogan" [(ngModel)]="SchoolSlogan">
         </div>
       </div>
   </div>
@@ -27,43 +27,43 @@
       <div class="col-md-6"> 
          <div class="input-group input-group-sm" style="padding-top: 10px">
           <span class="input-group-addon" id="sizing-addon3">Adress 1</span>
-          <input type="text" class="form-control" placeholder="Adress 1" aria-describedby="sizing-addon3" name="annSco">
+          <input type="text" class="form-control" placeholder="Adress 1" aria-describedby="sizing-addon3" name="schoolAdress1" [(ngModel)]="schoolAdress1">
         </div> 
         
         <div class="input-group input-group-sm" style="padding-top: 10px">
           <span class="input-group-addon" id="sizing-addon3">Phone</span>
-          <input type="text" class="form-control" placeholder="Phone" aria-describedby="sizing-addon3" name="email">
+          <input type="text" class="form-control" placeholder="Phone" aria-describedby="sizing-addon3" name="schoolPhone" [(ngModel)]="schoolPhone">
         </div>
         <div class="input-group input-group-sm" style="padding-top: 10px">
           <span class="input-group-addon" id="sizing-addon3">Website</span>
-          <input type="text" class="form-control" placeholder="Website" aria-describedby="sizing-addon3" name="email">
+          <input type="text" class="form-control" placeholder="Website" aria-describedby="sizing-addon3" name="schoolWebsite" [(ngModel)]="schoolWebsite">
         </div>
         <div class="input-group input-group-sm" style="padding-top: 10px">
           <span class="input-group-addon" id="sizing-addon3">Fax</span>
-          <input type="text" class="form-control" placeholder="Website" aria-describedby="sizing-addon3" name="email">
+          <input type="text" class="form-control" placeholder="Website" aria-describedby="sizing-addon3" name="schoolFax" [(ngModel)]="schoolFax">
         </div>
         <div class="input-group input-group-sm" style="padding-top: 10px">
           <span class="input-group-addon" id="sizing-addon3">Registration number</span>
-          <input type="text" class="form-control" placeholder="Registration number" aria-describedby="sizing-addon3" name="email">
+          <input type="text" class="form-control" placeholder="Registration number" aria-describedby="sizing-addon3" name="schoolRegistration" [(ngModel)]="schoolRegistration">
         </div>
           
       </div>
       <div class="col-md-6"> 
         <div class="input-group input-group-sm" style="padding-top: 10px">
           <span class="input-group-addon" id="sizing-addon3">Adress 2</span>
-          <input type="text" class="form-control" placeholder="Adress 2" aria-describedby="sizing-addon3" name="annSco">
+          <input type="text" class="form-control" placeholder="Adress 2" aria-describedby="sizing-addon3" name="schoolAdress2" [(ngModel)]="schoolAdress2">
         </div>
         <div class="input-group input-group-sm" style="padding-top: 10px">
           <span class="input-group-addon" id="sizing-addon3">Email</span>
-          <input type="text" class="form-control" placeholder="Email" aria-describedby="sizing-addon3" name="telephone">
+          <input type="text" class="form-control" placeholder="Email" aria-describedby="sizing-addon3" name="schoolEmail" [(ngModel)]="schoolEmail">
         </div>
         <div class="input-group input-group-sm" style="padding-top: 10px">
           <span class="input-group-addon" id="sizing-addon3">Tax ID</span>
-          <input type="text" class="form-control" placeholder="Tax ID" aria-describedby="sizing-addon3" name="email">
+          <input type="text" class="form-control" placeholder="Tax ID" aria-describedby="sizing-addon3" name="schoolTaxId" [(ngModel)]="schoolTaxId">
         </div>
         <div class="input-group input-group-sm" style="padding-top: 10px">
           <span class="input-group-addon" id="sizing-addon3">Authorization number</span>
-          <input type="text" class="form-control" placeholder="Authorization number" aria-describedby="sizing-addon3" name="email">
+          <input type="text" class="form-control" placeholder="Authorization number" aria-describedby="sizing-addon3" name="schoolAuthorization" [(ngModel)]="schoolAuthorization">
         </div>
       </div>
      </div>

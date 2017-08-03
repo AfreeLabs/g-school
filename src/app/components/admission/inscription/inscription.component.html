@@ -4,6 +4,13 @@
   <li class="active">Admission</li>
 </ol>
 
+<!-- <button class="btn btn-success" type="submit"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span>Save and add another</button> -->
+<div class="panel panel-default">
+  <div class="panel-body">
+    <button class="btn btn-success" type="submit"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span>Save</button>
+    <button class="btn btn-danger" type="submit"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span>Cancel</button>
+  </div>
+</div>
 <div class="panel panel-default">
   <div class="panel-body">
     <div class="row">
@@ -13,7 +20,7 @@
         </div>
       </div>
       <div class="col-md-6">
-        <div class="input-group input-group-sm" style="padding-top: 10px">
+        <div class="input-group input-group-sm">
           <span class="input-group-addon" id="sizing-addon3">Add student</span>
           <select class="form-control">
             <option>----</option>
@@ -35,6 +42,10 @@
       <div class="col-md-4">
         <img src="../../../assets/images/avatar.png" alt="..." class="img-responsive img-thumbnail" style="width:145px; height:145px">
         <!-- <button class="btn btn-default" type="submit" style="margin:3px">Choisire un fichier</button> -->
+        <label class="custom-file">
+          <input type="file" id="file" class="custom-file-input">
+          <span class="custom-file-control"></span>
+        </label>
       </div>
       <div class="col-md-8">
         <div class="input-group input-group-sm" style="padding-top: 10px">
@@ -58,17 +69,22 @@
 
         <div class="input-group input-group-sm" style="padding-top: 10px">
           <span class="input-group-addon" id="sizing-addon3">Sexe</span>
-          <input type="text" class="form-control" placeholder="Username" aria-describedby="sizing-addon3">
+          <select class="form-control">
+            <option>----</option>
+            <option>Max</option>
+            <option>Fem</option>
+          </select>
         </div>
 
         <div class="input-group input-group-sm" style="padding-top: 10px">
-          <span class="input-group-addon" id="sizing-addon3">Date de naissance</span>
-          <input type="text" class="form-control" placeholder="Username" aria-describedby="sizing-addon3">
+          <span class="input-group-addon" id="sizing-addon3">Date of birth</span>
+          <!-- <input type="text" class="form-control" placeholder="Username" aria-describedby="sizing-addon3"> -->
+          <input class="form-control" type="date" value="2011-08-19" id="example-date-input">
         </div>
 
         <div class="input-group input-group-sm" style="padding-top: 10px">
-          <span class="input-group-addon" id="sizing-addon3">Lieu de naissance</span>
-          <input type="text" class="form-control" placeholder="Lieu de naissance" aria-describedby="sizing-addon3">
+          <span class="input-group-addon" id="sizing-addon3">Place of birth</span>
+          <input type="text" class="form-control" placeholder="Place of birth" aria-describedby="sizing-addon3">
         </div>
       </div>
     </div>
