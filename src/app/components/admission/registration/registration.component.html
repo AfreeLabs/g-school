@@ -1,120 +1,87 @@
-<ol class="breadcrumb">
-  <li><a href="#">Home</a></li>
-  <!--<li><a href="#">Adminition</a></li>-->
-  <li class="active">Registration</li>
-</ol>
-
+<div class="page-header">
+  <ol class="breadcrumb">
+    <li><a href="#" routerLink="../../admission">Admission</a></li>
+    <li class="active">Registration List</li>
+  </ol>
+  <button class="btn btn-success" type="submit" routerLink="../newRegistration"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span>Create</button>
+  <!-- <button class="btn btn-danger" type="submit"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span>Cancel</button> -->
+</div>
 <div class="panel panel-default">
+  <!-- Default panel contents -->
+  <div class="panel-heading">Registration List
+  </div>
   <div class="panel-body">
-    <div class="row">
-      <div class="col-md-4">
-        <img src="../../../assets/images/avatar.png" alt="..." class="img-responsive img-thumbnail" style="width:145px; height:145px">
-        <button class="btn btn-default" type="submit" style="margin:3px">Choisire un fichier</button>
+    <p>...</p>
+  </div>
+  <!-- <button type="button" class="btn btn-primary" (click)="onCreate">Create</button> -->
+  <!-- Table -->
+  <table class="table">
+    <thead>
+      <tr>
+        <td>id</td>
+        <td>Name</td>
+        <td>Email</td>
+        <td>Status</td>
+        <!-- <td>Departements</td> -->
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of batch">
+        <td>{{item.id}}</td>
+        <td>{{item.name}}</td>
+        <td>{{item.start_date}}</td>
+        <td>{{item.end_date}}</td>
+        <!-- <td>{{item.department}}</td> -->
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- Modal -->
+<!-- <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="gridSystemModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="gridSystemModalLabel">Add class level</h4>
       </div>
-      <div class="col-md-8">
-        <div class="input-group input-group-sm" style="padding-top: 10px">
-          <span class="input-group-addon" id="sizing-addon3">First name</span>
-          <input type="text" class="form-control" placeholder="First name" aria-describedby="sizing-addon3">
-        </div>
+      <div class="modal-body">
+        <div class="row">
+          <div class="col-md-4">
+            <div class="alert alert-info" role="alert">
+              Add class level <br/> Add class level <br/> Add class level <br/>
+            </div>
+          </div>
+          <div class="col-md-8">
+            <div class="input-group input-group-sm">
+              <span class="input-group-addon" id="sizing-addon3">Batch Name</span>
+              <input type="text" class="form-control" placeholder="Code Class level" name="name" [(ngModel)]="name" aria-describedby="sizing-addon3">
+            </div>
 
-        <div class="input-group input-group-sm" style="padding-top: 10px">
-          <span class="input-group-addon" id="sizing-addon3">Middle name</span>
-          <input type="text" class="form-control" placeholder="Middle name" aria-describedby="sizing-addon3">
-        </div>
+            <div class="input-group input-group-sm" style="padding-top: 10px">
+              <span class="input-group-addon" id="sizing-addon3">Start date</span>
+              <input type="text" class="form-control" placeholder="Class level" name="start_date" [(ngModel)]="start_date" aria-describedby="sizing-addon3">
+            </div>
 
-        <div class="input-group input-group-sm" style="padding-top: 10px">
-          <span class="input-group-addon" id="sizing-addon3">Last name</span>
-          <input type="text" class="form-control" placeholder="Last name" aria-describedby="sizing-addon3">
-        </div>
+            <div class="input-group input-group-sm" style="padding-top: 10px">
+              <span class="input-group-addon" id="sizing-addon3">End date</span>
+              <input type="text" class="form-control" placeholder="Class level" name="end_date" [(ngModel)]="end_date" aria-describedby="sizing-addon3">
+            </div>
 
-        <div class="input-group input-group-sm" style="padding-top: 10px">
-          <span class="input-group-addon" id="sizing-addon3">Gender</span>
-          <select class="form-control">
-                <option>----</option>
-                <option>Max</option>
-                <option>Fem</option>
+            <div class="input-group input-group-sm" style="padding-top: 10px">
+              <span class="input-group-addon" id="sizing-addon3" name="department">Departement</span>
+              <select class="form-control">
+                 <option>----</option>
+                 <option *ngFor="let item of departments">{{item.name}}</option> 
               </select>
+            </div>
+          </div>
         </div>
-        <div class="input-group input-group-sm" style="padding-top: 10px">
-          <span class="input-group-addon" id="sizing-addon3">ID card number</span>
-          <input type="text" class="form-control" placeholder="Gender" aria-describedby="sizing-addon3">
-        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary" (click)="onCreate()">Create</button>
       </div>
     </div>
   </div>
-</div>
-
-<div class="panel panel-default">
-  <div class="panel-body">
-    <div class="row">
-      <div class="col-md-6">
-        <div class="input-group input-group-sm" style="padding-top: 10px">
-          <span class="input-group-addon" id="sizing-addon3">Date of birth</span>
-          <!-- <input type="text" class="form-control" placeholder="Date of birth" aria-describedby="sizing-addon3"> -->
-          <input class="form-control" type="date" value="2011-08-19" id="example-date-input">
-        </div>
-        <div class="input-group input-group-sm" style="padding-top: 10px">
-          <span class="input-group-addon" id="sizing-addon3">Nationality</span>
-          <input type="text" class="form-control" placeholder="Nationality" aria-describedby="sizing-addon3">
-        </div>
-        <div class="input-group input-group-sm" style="padding-top: 10px">
-          <span class="input-group-addon" id="sizing-addon3">Email</span>
-          <input type="text" class="form-control" placeholder="Email" aria-describedby="sizing-addon3">
-        </div>
-      </div>
-      <div class="col-md-6">
-        <div class="input-group input-group-sm" style="padding-top: 10px">
-          <span class="input-group-addon" id="sizing-addon3">Place of birth</span>
-          <input type="text" class="form-control" placeholder="Place of birth" aria-describedby="sizing-addon3">
-        </div>
-        <div class="input-group input-group-sm" style="padding-top: 10px">
-          <span class="input-group-addon" id="sizing-addon3">Phone</span>
-          <input type="text" class="form-control" placeholder="Phone" aria-describedby="sizing-addon3">
-        </div>
-        <div class="input-group input-group-sm" style="padding-top: 10px">
-          <span class="input-group-addon" id="sizing-addon3">School origin</span>
-          <input type="text" class="form-control" placeholder="School origin" aria-describedby="sizing-addon3">
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-
-<div class="panel panel-default">
-  <div class="panel-body">
-    <div class="input-group input-group-sm" style="padding-top: 10px">
-      <span class="input-group-addon" id="sizing-addon3">Father name</span>
-      <input type="text" class="form-control" placeholder="Father name" aria-describedby="sizing-addon3">
-    </div>
-
-    <div class="input-group input-group-sm" style="padding-top: 10px">
-      <span class="input-group-addon" id="sizing-addon3">Mother name</span>
-      <input type="text" class="form-control" placeholder="Mother name" aria-describedby="sizing-addon3">
-    </div>
-    <div class="input-group input-group-sm" style="padding-top: 10px">
-      <span class="input-group-addon" id="sizing-addon3">Guardian</span>
-      <input type="text" class="form-control" placeholder="Guardian" aria-describedby="sizing-addon3">
-    </div>
-    <div class="input-group input-group-sm" style="padding-top: 10px">
-      <span class="input-group-addon" id="sizing-addon3">Guardian adress</span>
-      <input type="text" class="form-control" placeholder="Guardian adress" aria-describedby="sizing-addon3">
-    </div>
-    <div class="input-group input-group-sm" style="padding-top: 10px">
-      <span class="input-group-addon" id="sizing-addon3">Guardian phone</span>
-      <input type="text" class="form-control" placeholder="Guardian phone" aria-describedby="sizing-addon3">
-    </div>
-    <div class="input-group input-group-sm" style="padding-top: 10px">
-      <span class="input-group-addon" id="sizing-addon3">Guardian email</span>
-      <input type="text" class="form-control" placeholder="Guardian email" aria-describedby="sizing-addon3">
-    </div>
-  </div>
-</div>
-
-<div class="panel panel-default">
-  <div class="panel-body navbar-right">
-    <button class="btn btn-success" type="submit"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span>Save and add another</button>
-    <button class="btn btn-success" type="submit"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span>Save</button>
-    <button class="btn btn-danger" type="submit"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span>Cancel</button>
-  </div>
-</div>
+</div> -->

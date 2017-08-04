@@ -30,6 +30,9 @@ import { AdmissionComponent } from './components/admission/admission.component';
 import { RegistrationComponent } from './components/admission/registration/registration.component';
 import { InscriptionComponent } from './components/admission/inscription/inscription.component';
 import { BatchComponent } from './components/configuration/batch/batch.component';
+import { UsersComponent } from './components/configuration/users/users.component';
+import { NewAdmissionComponent } from './components/admission/inscription/new-admission/new-admission.component';
+import { NewRegistrationComponent } from './components/admission/registration/new-registration/new-registration.component';
 
 
 const appRoutes: Routes = [
@@ -39,7 +42,9 @@ const appRoutes: Routes = [
     children: [
       { path: '', redirectTo: 'admition', pathMatch: 'full'},
       { path: 'registration', component: RegistrationComponent},
-      { path: 'inscription', component: InscriptionComponent}
+      { path: 'inscription', component: InscriptionComponent},
+      { path: 'newRegistration', component: NewRegistrationComponent },
+      { path: 'newAdmission', component: NewAdmissionComponent }
     ]
 
   },
@@ -77,7 +82,8 @@ const appRoutes: Routes = [
       { path: 'programme', component: ProgrammeComponent},
       { path: 'instructeur', component: InstructeurComponent},
       { path: 'ecole', component: EcoleComponent},
-      { path: 'batch', component: BatchComponent }
+      { path: 'batch', component: BatchComponent },
+      { path: 'users', component: UsersComponent }
     ]
   },
 ]
@@ -104,7 +110,10 @@ const appRoutes: Routes = [
     ClassLevelsComponent,
     AdmissionComponent,
     RegistrationComponent,
-    BatchComponent
+    BatchComponent,
+    UsersComponent,
+    NewAdmissionComponent,
+    NewRegistrationComponent
   ],
   imports: [
     BrowserModule,
