@@ -1,17 +1,7 @@
-<div class="page-header">
-  <ol class="breadcrumb">
-    <li><a href="#" routerLink="../../admission">Admission</a></li>
-    <li class="active">List admissions</li>
-  </ol>
-  <button class="btn btn-success" type="submit" routerLink="../newAdmission"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span>Create</button>
-  <!-- <button class="btn btn-danger" type="submit"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span>Cancel</button> -->
-</div>
-
 <div class="panel panel-default">
   <!-- Default panel contents -->
-  <div class="panel-heading">Admission List
-    <!-- <button class="btn-save" >Create</button> -->
-    <a routerLink="../newAdmission">New Admission</a>
+  <div class="panel-heading">Users List
+    <button class="btn-save" data-toggle="modal" data-target="#myModal">Create</button>
   </div>
   <div class="panel-body">
     <p>...</p>
@@ -22,20 +12,19 @@
     <thead>
       <tr>
         <td>id</td>
-        <td>First Name</td>
-        <td>Last Name</td>
-        <td>Departement</td>
-        <td>Class level</td>
-         <td>Rooms</td> 
+        <td>Name</td>
+        <td>Email</td>
+        <td>Status</td>
+        <!-- <td>Departements</td> -->
       </tr>
     </thead>
     <tbody>
       <tr *ngFor="let item of batch">
-        <td>{{item.id}}</td>
+        <td>{{item.id}}</td> 
         <td>{{item.name}}</td>
         <td>{{item.start_date}}</td>
         <td>{{item.end_date}}</td>
-        <td>{{item.department}}</td> 
+        <!-- <td>{{item.department}}</td> -->
       </tr>
     </tbody>
   </table>
