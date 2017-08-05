@@ -3,12 +3,13 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import {RouterModule, Routes} from '@angular/router';
+import { DataTableModule } from 'angular-2-data-table';
 
 // import { AuthGuard } from './guards/auth.guard';
 import { FlashMessagesService } from 'angular2-flash-messages';
 import { FetchData } from './services/FetchData.service';
 
-// import { AuthServiceService } from './services/auth-service.service'
+import { AuthServiceService } from './services/auth-service.service'
 import { AppComponent } from './app.component';
 import { LoginComponent } from './components/login/login.component';
 import { HomeComponent } from './components/home/home.component';
@@ -119,9 +120,10 @@ const appRoutes: Routes = [
     BrowserModule,
     FormsModule,
     HttpModule,
+    DataTableModule,
     RouterModule.forRoot(appRoutes),
   ],
-  providers: [FlashMessagesService, FetchData],
+  providers: [FlashMessagesService, FetchData, AuthServiceService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

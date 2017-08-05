@@ -1,14 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-
+import { Http, Response } from '@angular/http';
+import { DataTableResource } from 'angular-2-data-table';
 import { FetchData } from '../../../services/FetchData.service';
 
-export class Batch {
-  id: number;
-  name: string;
-  start_date: string;
-  end_date: string;
-  department: [any];
-}
 
 @Component({
   selector: 'app-batch',
@@ -17,30 +11,28 @@ export class Batch {
 })
 export class BatchComponent implements OnInit {
 
-  batch = "";
+  // batch = "";
   departments = "";
   batchname: string;
   start_date: string;
   end_date: string;
   department: string;
+  Response = null;
+  items = "" ;
+  count = 0 ;
+  itemCount = 0 ;
 
-  batchForm = {
-    name: this.batchname,
-    start_date: this.start_date,
-    end_date: this.end_date,
-    department: this.department,
-  }
 
   constructor(private fetchData: FetchData) { }
 
   ngOnInit() {
-    let endPoint = 'api/v1/schoolbatch/';
+    let endPoint = 'api/v1/school/batch/';
 
     this.fetchData.get(endPoint)
       .subscribe(
       (data) => {
-        this.batch = data;
-        console.log(this.batch);
+        this.items = data;
+        console.log(this.items);
       },
       (error) => {
         console.log('unable to get info');
@@ -58,7 +50,7 @@ export class BatchComponent implements OnInit {
       .subscribe(
         (data) => {
           this.departments = data;
-          console.log(this.departments[1]);
+          console.log(this.departments[0]);
         },
         (error) => {
         console.log('unable to get info');
@@ -68,10 +60,28 @@ export class BatchComponent implements OnInit {
 
   onCreate() {
     // console.log('unable to get info');
+    const batchForm = {
+    name: this.batchname,
+    start_date: this.start_date,
+    end_date: this.end_date,
+    department: this.department,
+  }
 
-    let endPoint = 'api/v1/schoolbatch/';
+    let endPoint = 'api/v1/school/batch/';
 
-    this.fetchData.post(endPoint, this.batchForm)
+    this.fetchData.post(endPoint, batchForm)
       .subscribe();
+       console.log(batchForm);
+  }
+
+  reloadItems(params) {
+    // just reinit the component that gonna fetch and reload the data
+    this.ngOnInit() ;
+    }
+  rowClick(param){
+
+  }
+  rowDoubleClick(){
+
   }
 }
