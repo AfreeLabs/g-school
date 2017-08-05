@@ -1,17 +1,67 @@
+<div class="page-header">
+  <ol class="breadcrumb">
+    <li><a href="#" routerLink="../../configuration">Configuration</a></li>
+    <li class="active">Batch List</li>
+  </ol>
+  <button class="btn btn-success" type="submit" data-toggle="modal" data-target="#myModal"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span>Create</button>
+  <!-- <button class="btn btn-danger" type="submit"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span>Cancel</button> -->
+</div>
 <div class="panel panel-default">
   <!-- Default panel contents -->
   <div class="panel-heading">Batch List
-    <button class="btn-save" data-toggle="modal" data-target="#myModal">Create</button>
+    <!-- <button class="btn-save" data-toggle="modal" data-target="#myModal">Create</button> -->
   </div>
   <div class="panel-body">
     <p>...</p>
   </div>
   <!-- <button type="button" class="btn btn-primary" (click)="onCreate">Create</button> -->
   <!-- Table -->
-  <table class="table">
+  <div style="margin: auto; max-width: 1000px; margin-bottom: 50px;">
+    <data-table id="persons-grid"
+        headerTitle=""
+        [items]="items"
+        [itemCount]="itemCount"
+        [pagination]="false"
+        [indexColumn]="false"
+        [selectColumn]="true"
+        [multiSelect]="true"
+        (reload)="reloadItems($event)"
+
+        (rowClick)="rowClick($event)"
+        (rowDoubleClick)="rowDoubleClick($event)"
+        [rowTooltip]="rowTooltip"
+        >
+        <data-table-column
+            [property]="'name'" 
+            [header]="'Batch Name'"
+            [sortable]="true"
+            [resizable]="true">
+        </data-table-column>
+        <data-table-column
+            [property]="'start_date'"
+            [header]="'Start Date'"
+            [sortable]="true"
+            [resizable]="true">
+        </data-table-column>
+        <data-table-column
+            [property]="'end_date'"
+            [header]="'End Date'"
+            [sortable]="true"
+            [resizable]="true">
+        </data-table-column>
+        <data-table-column
+            [property]="'department'"
+            [header]="'Departements'"
+            [sortable]="true"
+            [resizable]="true">
+        </data-table-column>
+    </data-table>
+</div>
+
+  <!-- <table class="table">
     <thead>
       <tr>
-        <td>id</td>
+        <td>ID</td>
         <td>Batch Name</td>
         <td>Start Date</td>
         <td>End Date</td>
@@ -28,7 +78,7 @@
       </tr>
     </tbody>
   </table>
-</div>
+</div> -->
 
 <!-- Modal -->
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="gridSystemModalLabel">
@@ -48,26 +98,28 @@
           <div class="col-md-8">
             <div class="input-group input-group-sm">
               <span class="input-group-addon" id="sizing-addon3">Batch Name</span>
-              <input type="text" class="form-control" placeholder="Code Class level" name="name" [(ngModel)]="name" aria-describedby="sizing-addon3">
+              <input type="text" class="form-control" placeholder="Batch Name" name="batchname" [(ngModel)]="batchname" aria-describedby="sizing-addon3">
             </div>
 
             <div class="input-group input-group-sm" style="padding-top: 10px">
               <span class="input-group-addon" id="sizing-addon3">Start date</span>
-              <input type="text" class="form-control" placeholder="Class level" name="start_date" [(ngModel)]="start_date" aria-describedby="sizing-addon3">
+              <!-- <input type="text" class="form-control" placeholder="Start date" name="start_date" [(ngModel)]="start_date" aria-describedby="sizing-addon3"> -->
+              <input class="form-control" type="date" value="2011-08-19" id="example-date-input" name="start_date" [(ngModel)]="start_date">
             </div>
 
             <div class="input-group input-group-sm" style="padding-top: 10px">
               <span class="input-group-addon" id="sizing-addon3">End date</span>
-              <input type="text" class="form-control" placeholder="Class level" name="end_date" [(ngModel)]="end_date" aria-describedby="sizing-addon3">
+              <!-- <input type="text" class="form-control" placeholder="End date" name="end_date" [(ngModel)]="end_date" aria-describedby="sizing-addon3"> -->
+              <input class="form-control" type="date" value="2011-08-19" id="example-date-input" name="end_date" [(ngModel)]="end_date">
             </div>
 
             <div class="input-group input-group-sm" style="padding-top: 10px">
-              <span class="input-group-addon" id="sizing-addon3" name="department">Departement</span>
-              <select class="form-control">
+              <span class="input-group-addon" id="sizing-addon3" >Departement</span>
+              <select class="form-control" name="department" [(ngModel)]="department">
                  <option>----</option>
-                 <option *ngFor="let item of departments">{{item.name}}</option> 
+                 <option *ngFor="let item of departments" [ngValue]="item.id">{{item.name}}</option> 
               </select>
-            </div>
+            </div>  
           </div>
         </div>
       </div>
