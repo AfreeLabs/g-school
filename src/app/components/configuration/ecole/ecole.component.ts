@@ -47,7 +47,7 @@ export class EcoleComponent implements OnInit {
       .subscribe(
         (data) => {
           this.school = data;
-          console.log(this.school[0]);
+          console.log(this.school);
         },
         (error) => {
         console.log('unable to get info');

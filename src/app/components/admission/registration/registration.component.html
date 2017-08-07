@@ -47,7 +47,7 @@
             [header]="'Date'"
             [sortable]="true">
             <template #dataTableCell let-item="item">
-                <span>{{item.date | date:'yyyy-MM-dd'}}</span>
+                <span>{{item.date_of_birth | date:'dd-MM-yyyy'}}</span>
             </template>
         </data-table-column>
         <data-table-column
