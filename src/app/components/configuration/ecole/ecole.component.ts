@@ -2,13 +2,6 @@ import { Component, OnInit } from '@angular/core';
 // import { Http } from '@angular/http';
 import { FetchData } from '../../../services/FetchData.service';
 
-export class Element{
-  id: number;
-  name: string;
-  start_date: string;
-  end_date: string;
-  department: string;
-}
 
 @Component({
   selector: 'app-ecole',
@@ -19,21 +12,26 @@ export class Element{
 
 
 export class EcoleComponent implements OnInit {
-  
-  element = Element;
-  school = {
-    // schoolName
-    // schoolAbrev
-    // SchoolSlogan
-    // schoolAdress1
 
-    // schoolAdress1
-    // schoolAuthorization
-  }
-  // data = "";
+
+  school="";
+  school_name: string;
+  // schoolLogo: ImageBitmap;
+  schoolAbrev: string;
+  SchoolSlogan: string;
+  schoolAdress1: string;
+  schoolAdress2: string;
+  schoolPhone: string;
+  schoolWebsite: string;
+  schoolFax: string;
+  schoolRegistree: string;
+  schoolEmail: string;
+  schoolTaxId: string;
+  schoolAuthorization: string;
+  
   // Http = null;
   // Response = null;
-  // items = "";
+  // items =   ;
   // count = 0;
   // itemCount = 0;
 
@@ -43,33 +41,44 @@ export class EcoleComponent implements OnInit {
   }
 
   ngOnInit() {
-    // this.Http = Http;
-    // this.Response = Response;
-    let endPoint = 'api/v1/schoolbatch/';
+    let endPoint = 'api/school/school/';
 
     this.fetchData.get(endPoint)
       .subscribe(
-      (data) => {
-        // we assign the tab now
-        // this.fetchData.get(endPoint);
-        this.element = data;
-        // this.itemCount = this.count = this.items.length;
-        console.log(this.element.name);
-      },
-      (error) => {
-        console.error(error);
-      });
-
-
-    console.log('ok ');
-
+        (data) => {
+          this.school = data;
+          console.log(this.school[0]);
+        },
+        (error) => {
+        console.log('unable to get info');
+        
+        });
   }
 
 
-  onSaveSubmit(){
-    let endPoint = 'api/v1/schoolbatch/1/';
+  onSave(){
 
-    // this.fetchData.post(endPoint, )
+    const schoolForm = {
+       name : this.school_name,
+       abreviation : this.schoolAbrev,
+      //  logo : this.schoolLogo,
+       slogan : this.SchoolSlogan,
+       adress_1 : this. schoolAdress1,
+       adress_2 :  this.schoolAdress2,
+       website : this.schoolWebsite,
+       phone :  this.schoolPhone,
+       fax :  this.schoolFax,
+       email : this.schoolEmail,
+       tax_id :  this.schoolTaxId,
+       registration_number :  this.schoolRegistree,
+       authorization_number :  this.schoolAuthorization, 
+    }
+
+    let endPoint = 'api/school/school/';
+
+    this.fetchData.post(endPoint, schoolForm)
+      .subscribe();
+       console.log(schoolForm);
   }
   // reloadItems(params) {
   //   // just reinit the component that gonna fetch and reload the data

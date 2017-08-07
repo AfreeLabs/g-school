@@ -1,21 +1,44 @@
+<div class="page-header">
+  <ol class="breadcrumb">
+    <li><a href="#" routerLink="../../admission">Admission</a></li>
+    <li class="active">Registration List</li>
+  </ol>
+  <button class="btn btn-success btn-sm" type="submit" routerLink="../newRegistration"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span>Create</button>
+  <!-- <button class="btn btn-danger" type="submit"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span>Cancel</button> -->
+</div>
 
 <button class="btn-save" (click)="onSave()">Enregistrer</button>
 <hr>  
 
 <div class="panel panel-default">
   <div class="panel-body">
+    <table>
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>School Name</th>
+            <th>Date</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of school">
+            <td>{{item.}}</td>
+          </tr>
+        </tbody>
+      </table>
+
     <div class="row">
       <div class="col-md-4">
         <img src="../../../assets/images/g-school.png" alt="esponsive image" class="img-thumbnail" style="width:140px; height: 140px">
       </div>
       <div class="col-md-8">
          <div class="input-group input-group-sm">
-          <span class="input-group-addon" id="sizing-addon3">Nom de l'etablissement</span>
-          <input type="text" class="form-control" placeholder="Nom de l'etablissement" aria-describedby="sizing-addon3" name="schoolName" [(ngModel)]="schoolName" value="{{element.name}}">
+          <span class="input-group-addon" id="sizing-addon3">School name</span>
+          <input type="text" class="form-control" placeholder="School name" name="school_name" [(ngModel)]="school_name"  aria-describedby="sizing-addon3">
         </div>
         <div class="input-group input-group-sm" style="padding-top: 10px">
           <span class="input-group-addon" id="sizing-addon3">Abreviation</span>
-          <input type="text" class="form-control" placeholder="Abreviation" aria-describedby="sizing-addon3" name="schoolAbrev" [(ngModel)]="schoolAbrev" value="{{element.start_date}}">
+          <input type="text" class="form-control" placeholder="Abreviation" name="schoolAbrev" [(ngModel)]="schoolAbrev" aria-describedby="sizing-addon3">
         </div>
         <div class="input-group input-group-sm" style="padding-top: 10px">
           <span class="input-group-addon" id="sizing-addon3">Slogan</span>
@@ -44,7 +67,7 @@
         </div>
         <div class="input-group input-group-sm" style="padding-top: 10px">
           <span class="input-group-addon" id="sizing-addon3">Registration number</span>
-          <input type="text" class="form-control" placeholder="Registration number" aria-describedby="sizing-addon3" name="schoolRegistration" [(ngModel)]="schoolRegistration">
+          <input type="text" class="form-control" placeholder="Registration number" aria-describedby="sizing-addon3" name="schoolRegistree" [(ngModel)]="schoolRegistree">
         </div>
           
       </div>

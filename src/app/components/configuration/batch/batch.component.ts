@@ -26,7 +26,7 @@ export class BatchComponent implements OnInit {
   constructor(private fetchData: FetchData) { }
 
   ngOnInit() {
-    let endPoint = 'api/v1/school/batch/';
+    let endPoint = 'api/school/batch/';
 
     this.fetchData.get(endPoint)
       .subscribe(
@@ -44,7 +44,7 @@ export class BatchComponent implements OnInit {
 
 
   getDepartement(){
-    let endPoint = 'api/v1/department/department/';
+    let endPoint = 'api/department/department/';
 
     this.fetchData.get(endPoint)
       .subscribe(

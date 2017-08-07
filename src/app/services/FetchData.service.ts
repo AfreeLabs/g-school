@@ -31,6 +31,16 @@ export class FetchData {
         return this.http.post(this.baseURL + endPoint, data, {headers: header})
             .map((res) => res.json());
     }
+
+    put(endPoint, data) {
+        let header = this.getHeader();
+        if (endPoint === null) {
+            return;
+        }
+
+        return this.http.put(this.baseURL + endPoint, data, {headers: header})
+            .map((res) => res.json());
+    }
         
     // get data from server
     get(endPoint) {
