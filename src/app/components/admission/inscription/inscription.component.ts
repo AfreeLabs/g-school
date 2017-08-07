@@ -23,7 +23,7 @@ export class InscriptionComponent implements OnInit {
   ngOnInit() {
   // this.Http = Http ;
     // this.Response = Response ;
-    let endPoint = 'api/v1/admission/' ;
+    let endPoint = 'api/admission/admission/' ;
 
     this.fetchData.get(endPoint)
       .subscribe(

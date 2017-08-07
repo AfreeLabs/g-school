@@ -4,7 +4,7 @@
     <li><a href="#" routerLink="../registration">Registration List</a></li>
     <li class="active">New registration</li>
   </ol>
-  <button class="btn btn-success" type="submit"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span>Save</button>
+  <button class="btn btn-success" type="submit" (click)="onCreateRegistree()"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span>Save</button>
   <button class="btn btn-danger" type="submit"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span>Cancel</button>
   </div>
 
@@ -18,35 +18,32 @@
       <div class="col-md-8">
         <div class="input-group input-group-sm" style="padding-top: 10px">
           <span class="input-group-addon" id="sizing-addon3">Registry Number</span>
-          <input type="text" class="form-control" placeholder="Registry Number" aria-describedby="sizing-addon3" readonly>
+          <input type="text" class="form-control" placeholder="Registry Number" name="regnumber" [(ngModel)]="regnumber" aria-describedby="sizing-addon3" readonly>
         </div>
         <div class="input-group input-group-sm" style="padding-top: 10px">
           <span class="input-group-addon" id="sizing-addon3">First name</span>
-          <input type="text" class="form-control" placeholder="First name" aria-describedby="sizing-addon3">
+          <input type="text" class="form-control" placeholder="First name" name="first_name" [(ngModel)]="first_name" aria-describedby="sizing-addon3">
         </div>
 
         <div class="input-group input-group-sm" style="padding-top: 10px">
           <span class="input-group-addon" id="sizing-addon3">Middle name</span>
-          <input type="text" class="form-control" placeholder="Middle name" aria-describedby="sizing-addon3">
+          <input type="text" class="form-control" placeholder="Middle name" name="middle_name" [(ngModel)]="middle_name"  aria-describedby="sizing-addon3">
         </div>
 
         <div class="input-group input-group-sm" style="padding-top: 10px">
           <span class="input-group-addon" id="sizing-addon3">Last name</span>
-          <input type="text" class="form-control" placeholder="Last name" aria-describedby="sizing-addon3">
+          <input type="text" class="form-control" placeholder="Last name" name="last_name" [(ngModel)]="last_name" aria-describedby="sizing-addon3">
         </div>
 
         <div class="input-group input-group-sm" style="padding-top: 10px">
           <span class="input-group-addon" id="sizing-addon3">Gender</span>
-          <select class="form-control">
+          <select class="form-control" name="genre" [(ngModel)]="genre">
                 <option>----</option>
-                <option>Max</option>
-                <option>Fem</option>
+                <option>male</option>
+                <option>Female</option>
               </select>
         </div>
-        <div class="input-group input-group-sm" style="padding-top: 10px">
-          <span class="input-group-addon" id="sizing-addon3">ID card number</span>
-          <input type="text" class="form-control" placeholder="Gender" aria-describedby="sizing-addon3">
-        </div>
+        
       </div>
     </div>
   </div>
@@ -57,31 +54,41 @@
     <div class="row">
       <div class="col-md-6">
         <div class="input-group input-group-sm" style="padding-top: 10px">
+          <span class="input-group-addon" id="sizing-addon3">Adress</span>
+          <input type="text" class="form-control" placeholder="Adress" name="adress" [(ngModel)]="adress" aria-describedby="sizing-addon3">
+        </div>
+
+        <div class="input-group input-group-sm" style="padding-top: 10px">
           <span class="input-group-addon" id="sizing-addon3">Date of birth</span>
           <!-- <input type="text" class="form-control" placeholder="Date of birth" aria-describedby="sizing-addon3"> -->
-          <input class="form-control" type="date" value="2011-08-19" id="example-date-input">
+          <input class="form-control" type="date" value="2011-08-19" id="example-date-input" name="date_of_birth" [(ngModel)]="date_of_birth">
         </div>
         <div class="input-group input-group-sm" style="padding-top: 10px">
           <span class="input-group-addon" id="sizing-addon3">Nationality</span>
-          <input type="text" class="form-control" placeholder="Nationality" aria-describedby="sizing-addon3">
+          <input type="text" class="form-control" placeholder="Nationality" name="nationality" [(ngModel)]="nationality" aria-describedby="sizing-addon3">
         </div>
         <div class="input-group input-group-sm" style="padding-top: 10px">
           <span class="input-group-addon" id="sizing-addon3">Email</span>
-          <input type="text" class="form-control" placeholder="Email" aria-describedby="sizing-addon3">
+          <input type="text" class="form-control" placeholder="Email" name="email" [(ngModel)]="email" aria-describedby="sizing-addon3">
         </div>
       </div>
       <div class="col-md-6">
         <div class="input-group input-group-sm" style="padding-top: 10px">
+          <span class="input-group-addon" id="sizing-addon3">ID card number</span>
+          <input type="text" class="form-control" placeholder="Gender" name="id_card_number" [(ngModel)]="id_card_number" aria-describedby="sizing-addon3">
+        </div>
+
+        <div class="input-group input-group-sm" style="padding-top: 10px">
           <span class="input-group-addon" id="sizing-addon3">Place of birth</span>
-          <input type="text" class="form-control" placeholder="Place of birth" aria-describedby="sizing-addon3">
+          <input type="text" class="form-control" placeholder="Place of birth" name="place_of_birth" [(ngModel)]="place_of_birth" aria-describedby="sizing-addon3">
         </div>
         <div class="input-group input-group-sm" style="padding-top: 10px">
           <span class="input-group-addon" id="sizing-addon3">Phone</span>
-          <input type="text" class="form-control" placeholder="Phone" aria-describedby="sizing-addon3">
+          <input type="text" class="form-control" placeholder="Phone" name="phone_number" [(ngModel)]="phone_number" aria-describedby="sizing-addon3">
         </div>
         <div class="input-group input-group-sm" style="padding-top: 10px">
           <span class="input-group-addon" id="sizing-addon3">School origin</span>
-          <input type="text" class="form-control" placeholder="School origin" aria-describedby="sizing-addon3">
+          <input type="text" class="form-control" placeholder="School origin" name="school_origin" [(ngModel)]="school_origin" aria-describedby="sizing-addon3">
         </div>
       </div>
     </div>
@@ -93,36 +100,28 @@
   <div class="panel-body">
     <div class="input-group input-group-sm" style="padding-top: 10px">
       <span class="input-group-addon" id="sizing-addon3">Father name</span>
-      <input type="text" class="form-control" placeholder="Father name" aria-describedby="sizing-addon3">
+      <input type="text" class="form-control" placeholder="Father name" name="father_name" [(ngModel)]="father_name" aria-describedby="sizing-addon3">
     </div>
 
     <div class="input-group input-group-sm" style="padding-top: 10px">
       <span class="input-group-addon" id="sizing-addon3">Mother name</span>
-      <input type="text" class="form-control" placeholder="Mother name" aria-describedby="sizing-addon3">
+      <input type="text" class="form-control" placeholder="Mother name" name="mother_name" [(ngModel)]="mother_name" aria-describedby="sizing-addon3">
     </div>
     <div class="input-group input-group-sm" style="padding-top: 10px">
       <span class="input-group-addon" id="sizing-addon3">Guardian</span>
-      <input type="text" class="form-control" placeholder="Guardian" aria-describedby="sizing-addon3">
+      <input type="text" class="form-control" placeholder="Guardian" name="guardian" [(ngModel)]="guardian" aria-describedby="sizing-addon3">
     </div>
     <div class="input-group input-group-sm" style="padding-top: 10px">
       <span class="input-group-addon" id="sizing-addon3">Guardian adress</span>
-      <input type="text" class="form-control" placeholder="Guardian adress" aria-describedby="sizing-addon3">
+      <input type="text" class="form-control" placeholder="Guardian adress" name="guardian_adress" [(ngModel)]="guardian_adress" aria-describedby="sizing-addon3">
     </div>
     <div class="input-group input-group-sm" style="padding-top: 10px">
       <span class="input-group-addon" id="sizing-addon3">Guardian phone</span>
-      <input type="text" class="form-control" placeholder="Guardian phone" aria-describedby="sizing-addon3">
+      <input type="text" class="form-control" placeholder="Guardian phone" name="guardian_phone" [(ngModel)]="guardian_phone" aria-describedby="sizing-addon3">
     </div>
     <div class="input-group input-group-sm" style="padding-top: 10px">
       <span class="input-group-addon" id="sizing-addon3">Guardian email</span>
-      <input type="text" class="form-control" placeholder="Guardian email" aria-describedby="sizing-addon3">
+      <input type="text" class="form-control" placeholder="Guardian email" name="guardian_email" [(ngModel)]="guardian_email" aria-describedby="sizing-addon3">
     </div>
   </div>
 </div>
-
-<!-- <div class="panel panel-default">
-  <div class="panel-body navbar-right">
-    <button class="btn btn-success" type="submit"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span>Save and add another</button>
-    <button class="btn btn-success" type="submit"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span>Save</button>
-    <button class="btn btn-danger" type="submit"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span>Cancel</button>
-  </div>
-</div> -->

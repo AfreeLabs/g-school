@@ -8,30 +8,29 @@ import { FetchData } from '../../../services/FetchData.service';
 })
 export class RegistrationComponent implements OnInit {
 
-  private registry= "";
+
+
+  Response = null;
+  items = "" ;
+  count = 0 ;
+  itemCount = 0 ;
 
   constructor(private fetchData: FetchData) { }
 
   ngOnInit() {
-    // this.Http = Http;
-    // this.Response = Response;
-  //   let endPoint = 'api/v1/admission/';
+   let endPoint = 'api/admission/registration/' ;
 
-  //   this.fetchData.get(endPoint)
-  //     .subscribe(
-  //     (data) => {
-  //       // we assign the tab now
-  //       // this.fetchData.get(endPoint);
-  //       this.registry = data;
-  //       // this.itemCount = this.count = this.items.length;
-  //       console.log(this.registry);
-  //     },
-  //     (error) => {
-  //       console.error(error);
-  //     });
+    this.fetchData.get(endPoint)
+      .subscribe(
+      (data) => {
+        this.items = data;
+        console.log(this.items);
+      },
+      (error) => {
+        console.log('unable to get info');
 
-
-  //   console.log('ok ');
+      });
    }
+
 
 }

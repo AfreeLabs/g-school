@@ -67,7 +67,7 @@ export class BatchComponent implements OnInit {
     department: this.department,
   }
 
-    let endPoint = 'api/v1/school/batch/';
+    let endPoint = 'api/school/batch/';
 
     this.fetchData.post(endPoint, batchForm)
       .subscribe();
