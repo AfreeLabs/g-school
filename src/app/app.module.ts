@@ -5,7 +5,7 @@ import { HttpModule } from '@angular/http';
 import {RouterModule, Routes} from '@angular/router';
 import { DataTableModule } from 'angular-2-data-table';
 
-// import { AuthGuard } from './guards/auth.guard';
+import { AuthGuard } from './guards/auth.guard';
 import { FlashMessagesService } from 'angular2-flash-messages';
 import { FetchData } from './services/FetchData.service';
 
@@ -38,7 +38,7 @@ import { NewRegistrationComponent } from './components/admission/registration/ne
 
 const appRoutes: Routes = [
   {path: '', component: LoginComponent},
-  { path: 'home', component: HomeComponent},
+  {path: 'home', component: HomeComponent, canActivate: [AuthGuard]},
   {path: 'admission', component: AdmissionComponent,
     children: [
       { path: '', redirectTo: 'admition', pathMatch: 'full'},
@@ -46,7 +46,7 @@ const appRoutes: Routes = [
       { path: 'inscription', component: InscriptionComponent},
       { path: 'newRegistration', component: NewRegistrationComponent },
       { path: 'newAdmission', component: NewAdmissionComponent }
-    ]
+    ], canActivate: [AuthGuard]
 
   },
 
@@ -58,7 +58,7 @@ const appRoutes: Routes = [
       { path: 'rooms', component: RoomsComponent},
       { path: 'classLvls', component: ClassLevelsComponent},
       { path: 'depConfig', component: DepConfigComponent}
-    ]
+    ], canActivate: [AuthGuard]
 
   },
 
@@ -70,7 +70,7 @@ const appRoutes: Routes = [
       { path: 'grades', component: RoomsComponent},
       { path: 'payment', component: ClassLevelsComponent},
       { path: 'students', component: DepConfigComponent}
-    ]
+    ], canActivate: [AuthGuard]
 
   },
 
@@ -85,7 +85,7 @@ const appRoutes: Routes = [
       { path: 'ecole', component: EcoleComponent},
       { path: 'batch', component: BatchComponent },
       { path: 'users', component: UsersComponent }
-    ]
+    ], canActivate: [AuthGuard]
   },
 ]
 
@@ -123,7 +123,7 @@ const appRoutes: Routes = [
     DataTableModule,
     RouterModule.forRoot(appRoutes),
   ],
-  providers: [FlashMessagesService, FetchData, AuthServiceService],
+  providers: [FlashMessagesService, FetchData, AuthServiceService, AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

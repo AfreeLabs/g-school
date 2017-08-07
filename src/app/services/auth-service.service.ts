@@ -11,7 +11,7 @@ export class AuthServiceService {
   loginUser(user) {
     let headers = new Headers();
     headers.append('Content-Type', 'application/json');
-    return this.http.post('http://127.0.0.1:8000/api/v1/api-token-auth/', user, { headers: headers })
+    return this.http.post('http://127.0.0.1:8000/api/api-token-auth/', user, { headers: headers })
       .map(res => res.json());
   }
 
