@@ -10,8 +10,10 @@ export class NewAdmissionComponent implements OnInit {
 
     Response = null;
     items = "" ;
+    RegistratioNumber = "";
     count = 0 ;
     itemCount = 0 ;
+    StudentNumber: string;
 
   // Form fields
      registration_number: string;
@@ -29,21 +31,17 @@ export class NewAdmissionComponent implements OnInit {
     //  phone_number : string;
     //  email : string;
      id_card_number : string;
-    //  guardian : string;
-    //  guardian_adress : string;
-    //  guardian_phone : string;
-    //  guardian_email : string;
-    //  school_origin : string;
      batch : string;
      department : string;
 
   constructor(private fetchData: FetchData) { }
 
   ngOnInit() {
+    this.getRegistratioNumber();
   }
 
   getcurrentAddInfo() {
-    let endPoint = 'api/admission/admission/' ;
+    let endPoint = 'api/admission/registration/' ;
 
     this.fetchData.get(endPoint)
       .subscribe(
@@ -55,6 +53,40 @@ export class NewAdmissionComponent implements OnInit {
         console.log('unable to get info');
 
       });
+  }
+
+  getRegistratioNumber() {
+    let endPoint = 'api/admission/registration/' ;
+
+    this.fetchData.get(endPoint)
+      .subscribe(
+      (data) => {
+        this.RegistratioNumber = data;
+        console.log(this.RegistratioNumber);
+      },
+      (error) => {
+        console.log('unable to get info');
+
+      });
+  }
+
+  onChange(data) {
+    // console.log(data);
+    let StudentNbr = this.StudentNumber;
+    console.log(StudentNbr);
+    let endPoint = 'api/admission/registration/' + this.StudentNumber;
+
+    this.fetchData.get(endPoint)
+      .subscribe(
+      (data) => {
+        this.RegistratioNumber = data;
+        console.log(this.RegistratioNumber);
+      },
+      (error) => {
+        console.log('unable to get info');
+
+      });
+
   }
 
   onCreateAdmission() {

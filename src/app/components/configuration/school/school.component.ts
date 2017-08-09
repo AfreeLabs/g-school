@@ -1,19 +1,15 @@
 import { Component, OnInit } from '@angular/core';
-// import { Http } from '@angular/http';
 import { FetchData } from '../../../services/FetchData.service';
 
-
 @Component({
-  selector: 'app-ecole',
-  templateUrl: './ecole.component.html',
-  styleUrls: ['./ecole.component.css'],
-  // providers: [FetchData],
+  selector: 'app-school',
+  templateUrl: './school.component.html',
+  styleUrls: ['./school.component.css']
 })
+export class SchoolComponent implements OnInit {
 
 
-export class EcoleComponent implements OnInit {
-
-
+  // hide: boolean = false;
   school="";
   school_name: string;
   // schoolLogo: ImageBitmap;
@@ -35,8 +31,7 @@ export class EcoleComponent implements OnInit {
   // count = 0;
   // itemCount = 0;
 
-
-  constructor(private fetchData: FetchData) { 
+   constructor(private fetchData: FetchData) { 
     
   }
 
@@ -57,7 +52,7 @@ export class EcoleComponent implements OnInit {
 
 
   onSave(){
-
+    
     const schoolForm = {
        name : this.school_name,
        abreviation : this.schoolAbrev,
@@ -98,5 +93,3 @@ export class EcoleComponent implements OnInit {
   // }
 
 }
-
-

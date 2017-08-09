@@ -1,0 +1,32 @@
+<div class="page-header">
+  <ol class="breadcrumb">
+    <li><a href="#" routerLink="../../admission">Admission</a></li>
+    <li class="active">Registration List</li>
+  </ol>
+  <button class="btn btn-success btn-sm" type="submit" routerLink="../newSchool"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span>Create</button>
+  <!-- <button class="btn btn-success btn-sm" type="submit" (click)="show = !show"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span>{{show ? 'Modifier' : 'Sauvegarder'}}</button> -->
+  <!-- <button class="btn btn-danger" type="submit"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span>Cancel</button> -->
+</div>
+
+<!-- <button class="btn-save" (click)="onSave()">Enregistrer</button>
+<button class="btn-save" (click)="onSave()">Enregistrer</button> --> 
+
+
+    <table class="table">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>School Name</th>
+            <th>Date</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of school">
+            <td>{{item.id}}</td>
+            <td>{{item.name}}</td>
+            <td>{{item.abreviation}}</td>
+          </tr>
+        </tbody>
+      </table>
+
+    

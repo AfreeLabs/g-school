@@ -22,7 +22,6 @@ import { CoursComponent } from './components/configuration/cours/cours.component
 import { ProgrammeComponent } from './components/configuration/programme/programme.component';
 import { InstructeurComponent } from './components/configuration/instructeur/instructeur.component';
 import { AnneeAcademiqueComponent } from './components/configuration/annee-academique/annee-academique.component';
-import { EcoleComponent } from './components/configuration/ecole/ecole.component';
 import { StudentComponent } from './components/student/student.component';
 import { EmployeesComponent } from './components/employees/employees.component';
 import { RoomsComponent } from './components/departement/rooms/rooms.component';
@@ -34,6 +33,8 @@ import { BatchComponent } from './components/configuration/batch/batch.component
 import { UsersComponent } from './components/configuration/users/users.component';
 import { NewAdmissionComponent } from './components/admission/inscription/new-admission/new-admission.component';
 import { NewRegistrationComponent } from './components/admission/registration/new-registration/new-registration.component';
+import { SchoolComponent } from './components/configuration/school/school.component';
+import { NewSchoolComponent } from './components/configuration/school/new-school/new-school.component';
 
 
 const appRoutes: Routes = [
@@ -82,7 +83,8 @@ const appRoutes: Routes = [
       { path: 'dep-config', component: DepConfigComponent},
       { path: 'programme', component: ProgrammeComponent},
       { path: 'instructeur', component: InstructeurComponent},
-      { path: 'ecole', component: EcoleComponent},
+      { path: 'school', component: SchoolComponent},
+      { path: 'newSchool', component: NewSchoolComponent},
       { path: 'batch', component: BatchComponent },
       { path: 'users', component: UsersComponent }
     ], canActivate: [AuthGuard]
@@ -104,7 +106,6 @@ const appRoutes: Routes = [
     ProgrammeComponent,
     InstructeurComponent,
     AnneeAcademiqueComponent,
-    EcoleComponent,
     StudentComponent,
     EmployeesComponent,
     RoomsComponent,
@@ -114,7 +115,9 @@ const appRoutes: Routes = [
     BatchComponent,
     UsersComponent,
     NewAdmissionComponent,
-    NewRegistrationComponent
+    NewRegistrationComponent,
+    SchoolComponent,
+    NewSchoolComponent
   ],
   imports: [
     BrowserModule,

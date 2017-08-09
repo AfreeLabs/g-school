@@ -64,7 +64,6 @@ export class BatchComponent implements OnInit {
     name: this.batchname,
     start_date: this.start_date,
     end_date: this.end_date,
-    department: this.department,
   }
 
     let endPoint = 'api/school/batch/';

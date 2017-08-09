@@ -26,8 +26,9 @@
       <div class="col-md-6">
         <div class="input-group input-group-sm">
           <span class="input-group-addon" id="sizing-addon3">Add student</span>
-          <select class="form-control">
+          <select class="form-control" (change)="onChange($event.target.value)" [(ngModel)]="StudentNumber">
             <option>----</option>
+            <option *ngFor="let item of RegistratioNumber">{{item.registration_number}}</option>
           </select>
         </div>
         <div class="input-group input-group-sm" style="padding-top: 10px">

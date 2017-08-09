@@ -1,73 +1,90 @@
-<p>
-  configuration works!
-  <button class="btn-save" (click)="onSave()">Enregistrer</button>
-</p>
-<hr> 
-
-<div class="panel panel-default">
-  <div class="panel-body">
-    <div class="input-group input-group-sm">
-      <span class="input-group-addon" id="sizing-addon3">Departement name</span>
-      <input type="text" class="form-control" placeholder="departement" name="depName" aria-describedby="sizing-addon3">
-    </div>
-
-    <div class="input-group input-group-sm" style="padding-top: 10px">
-      <span class="input-group-addon" id="sizing-addon3">Abreviation</span>
-      <input type="text" class="form-control" placeholder="Abreviation" name="depAbrv" aria-describedby="sizing-addon3">
-    </div>
-
-    <div class="input-group input-group-sm" style="padding-top: 10px">
-      <span class="input-group-addon" id="sizing-addon3">Responsable</span>
-      <input type="text" class="form-control" placeholder="Responsable" name="depRspnsbl" aria-describedby="sizing-addon3">
-    </div>
-
-    <div class="input-group input-group-sm" style="padding-top: 10px">
-      <span class="input-group-addon" id="sizing-addon3">Fees</span>
-      <input type="text" class="form-control" placeholder="Fees" name="depPrncpl" aria-describedby="sizing-addon3">
-    </div>
-  </div>
-</div>
-
-<div class="panel panel-default">
-  <div class="panel-heading">Intro du departement</div>
-  <div class="panel-body">
-    <textarea class="form-control" rows="3" name="introDep"></textarea>
-  </div>
+<div class="page-header">
+   <ol class="breadcrumb">
+    <li class="active">Department</li>
+  </ol> 
+  <button class="btn btn-primary btn-sm" type="submit" data-toggle="modal" data-target="#myModal">
+    <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+    Create
+  </button>
 </div>
 
 <div class="panel panel-default">
   <div class="panel-body">
-    <div class="panel panel-default">
-      <!-- Default panel contents -->
-      <div class="panel-heading">Class levels</div>
-      <div class="panel-body">
-        <div class="alert alert-info" role="alert">
-          <p>Add class levels for this departement</p>
+    <div class="row">
+      <div class="col-md-6" *ngFor="let item of depName">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            {{item.name}}
+            <div class="dropdown pull-right">
+              <button class="btn btn-sm btn-default dropdown-toggle" style="margin: -6px;" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                Plus
+                <span class="caret"></span>
+              </button>
+              <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                <li><a href="#">Admission</a></li>
+                <li><a href="#">Class levels</a></li>
+                <li><a href="#">Teachers</a></li>
+                <li role="separator" class="divider"></li>
+                <li><a href="#">Separated link</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="panel-body">
+            <button type="button" class="btn btn-primary">Add Class Levels</button>
+          </div>
         </div>
-        
       </div>
+      <!-- <div class="col-md-6">
+        <div class="panel panel-default">
+          <div class="panel-heading">Panel heading without title</div>
+          <div class="panel-body">
+            Panel content
+          </div>
+        </div>
+      </div> -->
+    </div>
+  </div>
+</div>
 
-      <!-- Table -->
-      <table class="table table-bordered table-hover">
-        <thead>
-          <tr>
-            <td>#</td>
-            <td>Code classe</td>
-            <td>Classe</td>
-            <td>Place</td>
-            <td>Principal</td>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-        </tbody>
-      </table>
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="gridSystemModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="gridSystemModalLabel">Add class level</h4>
+        </div>
+        <div class="modal-body">
+          <div class="row">
+            <div class="col-md-4">
+              <div class="alert alert-info" role="alert">
+                Add class level <br/>
+                Add class level <br/>
+                Add class level <br/>
+              </div>
+            </div>
+            <div class="col-md-8">
+              <div class="input-group input-group-sm">
+                <span class="input-group-addon" id="sizing-addon3">Department Name</span>
+                <input type="text" class="form-control" placeholder="Department Name" name="Department" [(ngModel)]="Department" aria-describedby="sizing-addon3">
+              </div>
+
+              <div class="input-group input-group-sm" style="padding-top: 10px">
+                <span class="input-group-addon" id="sizing-addon3">Abreviation</span>
+                <input type="text" class="form-control" placeholder="Abreviation" name="abreviation" [(ngModel)]="abreviation" aria-describedby="sizing-addon3">
+              </div>
+
+              <div class="input-group input-group-sm" style="padding-top: 10px">
+                <span class="input-group-addon" id="sizing-addon3">Fees</span>
+                <input type="text" class="form-control" placeholder="fees" name="fees" [(ngModel)]="fees" aria-describedby="sizing-addon3">
+              </div>
+            </div>
+            </div>
+          </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary" (click)="onSave()">Save</button>
+      </div>
     </div>
   </div>
 </div>
