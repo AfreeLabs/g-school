@@ -67,10 +67,10 @@ const appRoutes: Routes = [
     path: 'student', component: StudentComponent,
     children: [
       { path: '', redirectTo: 'student', pathMatch: 'full'},
-      { path: 'exams', component: DepartementComponent},
-      { path: 'grades', component: RoomsComponent},
-      { path: 'payment', component: ClassLevelsComponent},
-      { path: 'students', component: DepConfigComponent}
+      { path: 'exams', component: DepartementComponent },
+      { path: 'grades', component: RoomsComponent },
+      { path: 'payment', component: ClassLevelsComponent },
+      { path: 'students', component: DepConfigComponent }
     ], canActivate: [AuthGuard]
 
   },
@@ -79,12 +79,12 @@ const appRoutes: Routes = [
     path: 'configuration', component: ConfigurationComponent,
     children: [
       { path: '', redirectTo: 'configuration', pathMatch: 'full'},
-      { path: 'cours', component: CoursComponent},
-      { path: 'dep-config', component: DepConfigComponent},
-      { path: 'programme', component: ProgrammeComponent},
-      { path: 'instructeur', component: InstructeurComponent},
-      { path: 'school', component: SchoolComponent},
-      { path: 'newSchool', component: NewSchoolComponent},
+      { path: 'cours', component: CoursComponent },
+      { path: 'dep-config', component: DepConfigComponent },
+      { path: 'programme', component: ProgrammeComponent },
+      { path: 'instructeur', component: InstructeurComponent },
+      { path: 'school', component: SchoolComponent },
+      { path: 'newSchool', component: NewSchoolComponent },
       { path: 'batch', component: BatchComponent },
       { path: 'users', component: UsersComponent }
     ], canActivate: [AuthGuard]
