@@ -1,21 +1,39 @@
-<div class="panel panel-default">
-  <!-- Default panel contents -->
-  <div class="panel-heading">Users List
-    <button class="btn-save" data-toggle="modal" data-target="#myModal">Create</button>
+<div class="page-header">
+  <ol class="breadcrumb">
+    <li><a href="#" routerLink="../../configuration">Configuration</a></li>
+    <li class="active">Users List</li>
+  </ol>
+  <button class="btn btn-primary btn-sm" type="submit" data-toggle="modal" data-target="#myModal"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span>&nbsp;Inviter</button>
+  <span class="pull-right">
+    <div class="dropdown">
+      <button class="btn btn-sm btn-default dropdown-toggle" style="margin: -6px;" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+        Action
+        <span class="caret"></span>
+      </button>
+      <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+        <li><a href="#">Delete</a></li>
+        <li><a href="#">Class levels</a></li>
+        <li><a href="#">Teachers</a></li>
+        <li role="separator" class="divider"></li>
+        <li><a href="#">Separated link</a></li>
+      </ul>
+    </div>
+  </span>
+</div>
+
+<div class="panel panel-primary">
+  <div class="panel-heading">
+    Users List
   </div>
   <div class="panel-body">
-    <p>...</p>
-  </div>
-  <!-- <button type="button" class="btn btn-primary" (click)="onCreate">Create</button> -->
-  <!-- Table -->
-  <table class="table">
+    <table class="table">
     <thead>
       <tr>
-        <td>id</td>
-        <td>Name</td>
-        <td>Email</td>
-        <td>Status</td>
-        <!-- <td>Departements</td> -->
+        <th>ID</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Status</th>
+         <!-- <td>Last cone</td>  -->
       </tr>
     </thead>
     <tbody>
@@ -24,57 +42,71 @@
         <td>{{item.name}}</td>
         <td>{{item.start_date}}</td>
         <td>{{item.end_date}}</td>
-        <!-- <td>{{item.department}}</td> -->
+         <!-- <td>{{item.department}}</td>  -->
       </tr>
     </tbody>
   </table>
+  </div>
 </div>
+  <!-- <button type="button" class="btn btn-primary" (click)="onCreate">Create</button> -->
+  <!-- Table -->
+  
 
 <!-- Modal -->
-<!-- <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="gridSystemModalLabel">
+ <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="gridSystemModalLabel">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="gridSystemModalLabel">Add class level</h4>
+        <h4 class="modal-title" id="gridSystemModalLabel">Add User</h4>
       </div>
       <div class="modal-body">
         <div class="row">
           <div class="col-md-4">
             <div class="alert alert-info" role="alert">
-              Add class level <br/> Add class level <br/> Add class level <br/>
+              Add User level
             </div>
           </div>
           <div class="col-md-8">
             <div class="input-group input-group-sm">
-              <span class="input-group-addon" id="sizing-addon3">Batch Name</span>
-              <input type="text" class="form-control" placeholder="Code Class level" name="name" [(ngModel)]="name" aria-describedby="sizing-addon3">
+              <span class="input-group-addon" id="sizing-addon3">First Name</span>
+              <input type="text" class="form-control" placeholder="First Name" name="name" [(ngModel)]="name" aria-describedby="sizing-addon3">
+            </div>
+            
+            <div class="input-group input-group-sm" style="padding-top: 10px">
+              <span class="input-group-addon" id="sizing-addon3">Last Name</span>
+              <input type="text" class="form-control" placeholder="Last Name" name="name" [(ngModel)]="name" aria-describedby="sizing-addon3">
             </div>
 
             <div class="input-group input-group-sm" style="padding-top: 10px">
+              <span class="input-group-addon" id="sizing-addon3">Email</span>
+              <input type="text" class="form-control" placeholder="Email" name="name" [(ngModel)]="name" aria-describedby="sizing-addon3">
+            </div>
+
+            <!-- <div class="input-group input-group-sm" style="padding-top: 10px">
               <span class="input-group-addon" id="sizing-addon3">Start date</span>
               <input type="text" class="form-control" placeholder="Class level" name="start_date" [(ngModel)]="start_date" aria-describedby="sizing-addon3">
-            </div>
+            </div> -->
 
-            <div class="input-group input-group-sm" style="padding-top: 10px">
+            <!-- <div class="input-group input-group-sm" style="padding-top: 10px">
               <span class="input-group-addon" id="sizing-addon3">End date</span>
               <input type="text" class="form-control" placeholder="Class level" name="end_date" [(ngModel)]="end_date" aria-describedby="sizing-addon3">
-            </div>
+            </div> -->
 
-            <div class="input-group input-group-sm" style="padding-top: 10px">
+            <!-- <div class="input-group input-group-sm" style="padding-top: 10px">
               <span class="input-group-addon" id="sizing-addon3" name="department">Departement</span>
               <select class="form-control">
                  <option>----</option>
                  <option *ngFor="let item of departments">{{item.name}}</option> 
               </select>
-            </div>
+            </div> -->
           </div>
         </div>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary" (click)="onCreate()">Create</button>
+        <button type="button" class="btn btn-success" (click)="onCreate()">Ok</button>
       </div>
     </div>
   </div>
-</div> -->
+</div> 

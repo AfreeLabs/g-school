@@ -11,7 +11,11 @@
 <!-- <button class="btn-save" (click)="onSave()">Enregistrer</button>
 <button class="btn-save" (click)="onSave()">Enregistrer</button> --> 
 
-
+<div class="panel panel-primary">
+  <div class="panel-heading">
+    School List
+  </div>
+  <div class="panel-body">
     <table class="table">
         <thead>
           <tr>
@@ -23,10 +27,13 @@
         <tbody>
           <tr *ngFor="let item of school">
             <td>{{item.id}}</td>
-            <td>{{item.name}}</td>
+            <td><a routerLink="../newSchool">{{item.name}}</a></td>
             <td>{{item.abreviation}}</td>
           </tr>
         </tbody>
       </table>
+  </div>
+</div>
+    
 
     

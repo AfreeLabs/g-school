@@ -1,7 +1,7 @@
 <div class="page-header">
   <ol class="breadcrumb">
     <li><a href="#" routerLink="../../configuration">Department</a></li>
-    <li class="active">Rooms List</li>
+    <li class="active">Exams List</li>
   </ol>
   <button class="btn btn-primary btn-sm" type="submit" data-toggle="modal" data-target="#myModal"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span>Create</button>
   <span class="pull-right">
@@ -21,45 +21,33 @@
   </span>
 </div>
 
-  <!-- <div class="alert alert-success" *ngIf="saveSuccess">
-    <strong>Success!</strong>
-</div> -->
-
 <div class="panel panel-primary">
-  <!-- Default panel contents -->
   <div class="panel-heading">
-    Rooms List
-    <span class="pull-right">
-      <!-- <button class="btn btn-success" type="submit" style="margin: -6px;" data-toggle="modal" data-target="#myModal">
-        <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> ADD ROOM
-    </button> -->
-    </span>
+    Exams List
   </div>
   <div class="panel-body">
-    <div class="alert alert-info" role="alert">
-      Select room below to show info
-    </div>
-  </div>
-
-  <!-- Table -->
+    <!-- Table -->
   <table class="table">
     <thead>
         <tr>
           <th>ID</th>
-          <th>Class Level</th>
-          <th>Place</th>
-          <th>Department</th>
+          <th>Exam Code</th>
+          <th>Exam Name</th>
+          <th>Start date</th>
+          <th>End date</th>
         </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let item of room">
+      <tr *ngFor="let item of exams">
         <td>{{item.id}}</td>
+        <td><a href="#">{{item.code}}</a></td>
         <td><a href="#">{{item.name}}</a></td>
-        <td>{{item.places}}</td>
-        <td>{{item.department.name}}</td>
+        <td>{{item.start_date}}</td>
+        <td>{{item.end_date}}</td>
       </tr>
     </tbody>
   </table>
+  </div>
 </div>
 
 <!-- Modal -->
@@ -68,7 +56,7 @@
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="gridSystemModalLabel">Add room</h4>
+        <h4 class="modal-title" id="gridSystemModalLabel">Add Exam</h4>
       </div>
       <div class="modal-body">
         <div class="row">
@@ -79,38 +67,32 @@
           </div>
           <div class="col-md-8">
             <div class="input-group input-group-sm">
-              <span class="input-group-addon" id="sizing-addon3">Room Code</span>
-              <input type="text" class="form-control" placeholder="Room Code" name="roomCode" [(ngModel)]="roomCode" aria-describedby="sizing-addon3">
+              <span class="input-group-addon" id="sizing-addon3">Exam Code</span>
+              <input type="text" class="form-control" placeholder="Exam Code" name="examCode" [(ngModel)]="examCode" aria-describedby="sizing-addon3">
             </div>
 
             <div class="input-group input-group-sm" style="padding-top: 10px">
-              <span class="input-group-addon" id="sizing-addon3">Room Name</span>
-              <input type="text" class="form-control" placeholder="Room Name" name="roomName" [(ngModel)]="roomName" aria-describedby="sizing-addon3">
+              <span class="input-group-addon" id="sizing-addon3">Exam Name</span>
+              <input type="text" class="form-control" placeholder="Exam Name" name="examName" [(ngModel)]="examName" aria-describedby="sizing-addon3">
             </div>
 
             <div class="input-group input-group-sm" style="padding-top: 10px">
-              <span class="input-group-addon" id="sizing-addon3">Place</span>
-              <input type="number" class="form-control" placeholder="Place" name="roomPlace" [(ngModel)]="roomPlace" aria-describedby="sizing-addon3">
+              <span class="input-group-addon" id="sizing-addon3">Start Date</span>
+              <input class="form-control" type="date" value="2011-08-19" id="example-date-input" name="examStartDate" [(ngModel)]="examStartDate">
+              <!-- <input type="number" class="form-control" placeholder="Place" name="roomPlace" [(ngModel)]="roomPlace" aria-describedby="sizing-addon3"> -->
             </div>
 
-            <!-- <div class="input-group input-group-sm" style="padding-top: 10px">
-              <span class="input-group-addon" id="sizing-addon3">Class level</span>
-              <input type="text" class="form-control" placeholder="Class level" name="abrvCrs" aria-describedby="sizing-addon3">
-            </div> -->
-
-            <div class="input-group input-group-sm" style="padding-top: 10px">
-              <span class="input-group-addon" id="sizing-addon3">Department</span>
-              <select class="form-control" name="department" [(ngModel)]="department">
-                 <option>----</option>
-                 <option *ngFor="let item of departments" [ngValue]="item.id">{{item.name}}</option> 
-              </select>
-            </div>
+             <div class="input-group input-group-sm" style="padding-top: 10px">
+              <span class="input-group-addon" id="sizing-addon3">End Date</span>
+              <input class="form-control" type="date" value="2011-08-19" id="example-date-input" name="examEndDate" [(ngModel)]="examEndDate">
+              <!-- <input type="text" class="form-control" placeholder="Class level" name="abrvCrs" aria-describedby="sizing-addon3"> -->
+            </div> 
           </div>
         </div>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default btn-sm" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary btn-sm" (click)="onSave()">Save</button>
+        <button type="button" class="btn btn-success btn-sm" (click)="onSave()">Save</button>
       </div>
     </div>
   </div>

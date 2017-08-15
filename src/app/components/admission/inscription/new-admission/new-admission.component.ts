@@ -10,7 +10,8 @@ export class NewAdmissionComponent implements OnInit {
 
     Response = null;
     items = "" ;
-    RegistratioNumber = "";
+    RegistratioNumber = [];
+    registree= "";
     count = 0 ;
     itemCount = 0 ;
     StudentNumber: string;
@@ -73,14 +74,14 @@ export class NewAdmissionComponent implements OnInit {
   onChange(data) {
     // console.log(data);
     let StudentNbr = this.StudentNumber;
-    console.log(StudentNbr);
+    // console.log(StudentNbr);
     let endPoint = 'api/admission/registration/' + this.StudentNumber;
 
     this.fetchData.get(endPoint)
       .subscribe(
       (data) => {
-        this.RegistratioNumber = data;
-        console.log(this.RegistratioNumber);
+        this.registree = data;
+        console.log(this.registree);
       },
       (error) => {
         console.log('unable to get info');
@@ -91,26 +92,26 @@ export class NewAdmissionComponent implements OnInit {
 
   onCreateAdmission() {
     const admissionForm = {
-      registration_number: this.registration_number,
-     first_name: this.first_name,
-     middle_name : this.middle_name,
-     last_name : this.last_name,
+    registration_number: this.registration_number,
+    first_name: this.first_name,
+    middle_name : this.middle_name,
+    last_name : this.last_name,
     //  photo : string,
-     date_of_birth : this.date_of_birth,
-     place_of_birth : this.place_of_birth,
-     genre : this.genre,
-     nationality : this.nationality,
-     father_name : this.father_name,
-     mother_name : this.mother_name,
-     adress : this.adress,
-    //  phone_number : this.phone_number,
-    //  email : this.email,
-     id_card_number : this.id_card_number,
-    //  guardian : this.guardian,
-    //  guardian_adress : this.guardian_adress,
-    //  guardian_phone : this.guardian_phone,
-    //  guardian_email : this.guardian_email,
-    //  school_origin : this.school_origin,
+    date_of_birth : this.date_of_birth,
+    place_of_birth : this.place_of_birth,
+    genre : this.genre,
+    nationality : this.nationality,
+    father_name : this.father_name,
+    mother_name : this.mother_name,
+    adress : this.adress,
+  //  phone_number : this.phone_number,
+  //  email : this.email,
+    id_card_number : this.id_card_number,
+  //  guardian : this.guardian,
+  //  guardian_adress : this.guardian_adress,
+  //  guardian_phone : this.guardian_phone,
+  //  guardian_email : this.guardian_email,
+  //  school_origin : this.school_origin,
     }
 
     let endPoint = 'api/v1/admission/admission/';

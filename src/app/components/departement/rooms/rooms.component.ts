@@ -7,7 +7,7 @@ import { FetchData } from '../../../services/FetchData.service';
   styleUrls: ['./rooms.component.css']
 })
 export class RoomsComponent implements OnInit {
-
+  saveSuccess: boolean;
   room= "";
   departments= "";
   department: string;
@@ -62,4 +62,6 @@ export class RoomsComponent implements OnInit {
     this.fetchData.post(endPoint, roomForm)
       .subscribe();
   }
+
+
 }

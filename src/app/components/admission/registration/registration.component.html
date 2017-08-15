@@ -3,10 +3,10 @@
     <li><a href="#" routerLink="../../admission">Admission</a></li>
     <li class="active">Registration List</li>
   </ol>
-  <button class="btn btn-success btn-sm" type="submit" routerLink="../newRegistration"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span>Create</button>
+  <button class="btn btn-primary btn-sm" type="submit" routerLink="../newRegistration"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span>Create</button>
   <!-- <button class="btn btn-danger" type="submit"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span>Cancel</button> -->
 </div>
-<div class="panel panel-default">
+<div class="panel panel-primary">
   <!-- Default panel contents -->
   <div class="panel-heading">Registration List
   </div>
@@ -15,7 +15,29 @@
   </div>
   <!-- <button type="button" class="btn btn-primary" (click)="onCreate">Create</button> -->
   <!-- Table -->
-  <div style="margin: auto; max-width: 1000px; margin-bottom: 50px;">
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th><input class="form-check-input" type="checkbox" value=""></th>
+        <th>Date</th>
+        <th>Registree number</th>
+        <th>First Name</th>
+        <th>Last Name</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of items">
+        <td><input class="form-check-input" type="checkbox" value=""></td>
+        <td> {{item.date}} </td>
+        <td>{{item.registration_number}}</td>
+        <td>{{item.first_name}}</td>
+        <td>{{item.last_name}}</td>
+      </tr>
+    </tbody>
+
+  </table>
+
+  <!-- <div style="margin: auto; max-width: 1000px; margin-bottom: 50px;">
     <data-table id="persons-grid"
         headerTitle=""
         [items]="items"
@@ -75,7 +97,7 @@
                 </span>
             </template>
         </data-table-column>
-    </data-table>
+    </data-table> -->
   </div>
 </div>
 

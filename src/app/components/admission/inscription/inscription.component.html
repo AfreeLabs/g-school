@@ -3,21 +3,40 @@
     <li><a href="#" routerLink="../../admission">Admission</a></li>
     <li class="active">List admissions</li>
   </ol>
-  <button class="btn btn-success btn-sm" type="submit" routerLink="../newAdmission"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span>Create</button>
+  <button class="btn btn-primary btn-sm" type="submit" routerLink="../newAdmission"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span>Create</button>
   <!-- <button class="btn btn-danger" type="submit"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span>Cancel</button> -->
 </div>
 
-<div class="panel panel-default">
+<div class="panel panel-primary">
   <!-- Default panel contents -->
   <div class="panel-heading">Admission List
     <!-- <button class="btn-save" >Create</button> -->
-    <a routerLink="../newAdmission">New Admission</a>
+    <!-- <a routerLink="../newAdmission">New Admission</a> -->
   </div>
   <div class="panel-body">
-    <p>...</p>
   </div>
   <!-- <button type="button" class="btn btn-primary" (click)="onCreate">Create</button> -->
   <!-- Table -->
+  <!-- <table class="table">
+    <thead>
+      <tr>
+        <th>Registree number</th>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Date</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+    </tbody>
+
+  </table> -->
+  
   <div style="margin: auto; max-width: 1000px; margin-bottom: 50px;">
     <data-table id="persons-grid"
         headerTitle=""
@@ -34,7 +53,7 @@
         [rowTooltip]="rowTooltip"
         >
         <data-table-column
-            [property]="'registree'" 
+            [property]="'registree.first_name'" 
             [header]="'First Name'"
             [sortable]="true"
             [resizable]="true">

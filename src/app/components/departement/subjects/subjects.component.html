@@ -1,7 +1,7 @@
 <div class="page-header">
   <ol class="breadcrumb">
     <li><a href="#" routerLink="../../configuration">Department</a></li>
-    <li class="active">Rooms List</li>
+    <li class="active">Subject List</li>
   </ol>
   <button class="btn btn-primary btn-sm" type="submit" data-toggle="modal" data-target="#myModal"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span>Create</button>
   <span class="pull-right">
@@ -21,42 +21,26 @@
   </span>
 </div>
 
-  <!-- <div class="alert alert-success" *ngIf="saveSuccess">
-    <strong>Success!</strong>
-</div> -->
-
 <div class="panel panel-primary">
   <!-- Default panel contents -->
-  <div class="panel-heading">
-    Rooms List
-    <span class="pull-right">
-      <!-- <button class="btn btn-success" type="submit" style="margin: -6px;" data-toggle="modal" data-target="#myModal">
-        <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> ADD ROOM
-    </button> -->
-    </span>
-  </div>
-  <div class="panel-body">
-    <div class="alert alert-info" role="alert">
-      Select room below to show info
-    </div>
-  </div>
+  <div class="panel-heading">Subjects List</div>
 
   <!-- Table -->
   <table class="table">
     <thead>
         <tr>
-          <th>ID</th>
+          <th>Code</th>
+          <th>Subject Name</th>
           <th>Class Level</th>
-          <th>Place</th>
-          <th>Department</th>
+          <th>Teacher</th>
         </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let item of room">
-        <td>{{item.id}}</td>
+      <tr *ngFor="let item of subject">
+        <td>{{item.code}}</td>
         <td><a href="#">{{item.name}}</a></td>
-        <td>{{item.places}}</td>
-        <td>{{item.department.name}}</td>
+        <td>{{item.class_level.name}}</td>
+        <td>{{item.teacher}}</td>
       </tr>
     </tbody>
   </table>
@@ -68,7 +52,7 @@
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="gridSystemModalLabel">Add room</h4>
+        <h4 class="modal-title" id="gridSystemModalLabel">Add Subject</h4>
       </div>
       <div class="modal-body">
         <div class="row">

@@ -35,6 +35,10 @@ import { NewAdmissionComponent } from './components/admission/inscription/new-ad
 import { NewRegistrationComponent } from './components/admission/registration/new-registration/new-registration.component';
 import { SchoolComponent } from './components/configuration/school/school.component';
 import { NewSchoolComponent } from './components/configuration/school/new-school/new-school.component';
+import { SubjectsComponent } from './components/departement/subjects/subjects.component';
+import { ExamsComponent } from './components/departement/exams/exams.component';
+import { StudentDetailsComponent } from './components/student/student-list/student-details/student-details.component';
+import { StudentListComponent } from './components/student/student-list/student-list.component';
 
 
 const appRoutes: Routes = [
@@ -58,6 +62,8 @@ const appRoutes: Routes = [
       { path: 'departements', component: DepartementComponent},
       { path: 'rooms', component: RoomsComponent},
       { path: 'classLvls', component: ClassLevelsComponent},
+      { path: 'subjects', component: SubjectsComponent},
+      { path: 'exams', component: ExamsComponent},
       { path: 'depConfig', component: DepConfigComponent}
     ], canActivate: [AuthGuard]
 
@@ -70,7 +76,9 @@ const appRoutes: Routes = [
       { path: 'exams', component: DepartementComponent },
       { path: 'grades', component: RoomsComponent },
       { path: 'payment', component: ClassLevelsComponent },
-      { path: 'students', component: DepConfigComponent }
+      { path: 'students', component: DepConfigComponent },
+      { path: 'studentDetails', component: StudentDetailsComponent },
+      { path: 'studentList', component: StudentListComponent }
     ], canActivate: [AuthGuard]
 
   },
@@ -117,7 +125,11 @@ const appRoutes: Routes = [
     NewAdmissionComponent,
     NewRegistrationComponent,
     SchoolComponent,
-    NewSchoolComponent
+    NewSchoolComponent,
+    SubjectsComponent,
+    ExamsComponent,
+    StudentDetailsComponent,
+    StudentListComponent
   ],
   imports: [
     BrowserModule,

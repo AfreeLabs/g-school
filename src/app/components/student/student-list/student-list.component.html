@@ -1,0 +1,40 @@
+<div class="page-header">
+   <ol class="breadcrumb">
+    <li class="active">Student</li>
+  </ol> 
+  <button class="btn btn-primary btn-sm" type="submit" data-toggle="modal" data-target="#myModal">
+    <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+    Create
+  </button>
+</div>
+
+<div class="panel panel-primary">
+  <div class="panel-heading">
+    Sudents List
+  </div>
+  <div class="panel-body">
+
+    <!-- Table -->
+    <table class="table">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Student Number</th>
+          <th>Student Name</th>
+          <th>Department</th>
+          <th>Class Level</th>
+        </tr>
+      </thead>
+      <tr *ngFor="let item of listStudent">
+        <td> {{item.id}} </td>
+        <td><a routerLink="../studentDetails">{{item.student_card_number}}</a></td>
+        <td> {{item.Name}} </td>
+        <td> {{item.department.name}} </td>
+        <td> {{item.class_level.name}} </td>
+        
+      </tr>
+    </table>
+
+  </div>
+
+</div>
