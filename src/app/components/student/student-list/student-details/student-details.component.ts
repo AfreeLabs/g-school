@@ -10,6 +10,11 @@ export class StudentDetailsComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    // this.onGetDetails();
+  }
+
+  onGetDetails(item) {
+    console.log(item)
   }
 
 }

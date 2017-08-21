@@ -41,6 +41,28 @@ export class FetchData {
         return this.http.put(this.baseURL + endPoint, data, {headers: header})
             .map((res) => res.json());
     }
+
+    // update data from server
+    update(endPoint) {
+        let header = this.getHeader();
+        if (endPoint === null) {
+            return;
+        }
+
+        return this.http.put(this.baseURL + endPoint, {headers: header})
+            .map((res) => res.json()); 
+    }
+
+    // delete data from server
+    delete(endPoint) {
+        let header = this.getHeader();
+        if (endPoint === null) {
+            return;
+        }
+
+        return this.http.delete(this.baseURL + endPoint, {headers: header})
+            .map((res) => res.json());
+    }
         
     // get data from server
     get(endPoint) {

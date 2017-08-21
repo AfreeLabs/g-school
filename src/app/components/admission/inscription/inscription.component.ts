@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Http, Response } from '@angular/http';
-import { DataTableResource } from 'angular-2-data-table';
 import {FetchData} from '../../../services/FetchData.service';
 
 @Component({
@@ -46,14 +45,10 @@ export class InscriptionComponent implements OnInit {
   rowDoubleClick(){
 
   }
-  getData(){
-    /*
-  return this.Http.get(BASE_URL + '/people?' + paramsToQueryString(params)).toPromise()
-            .then((resp: Response) => ({
-                items: resp.json(),
-                count: Number(resp.headers.get('X-Total-Count'))
-            }));
-  */
+
+  onGetDetails(event: Event){
+      console.log(event);
+
     }
 
 }

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {Router} from '@angular/router';
-// import { FlashMessagesService } from 'angular2-flash-messages';
+import { FlashMessagesService } from 'angular2-flash-messages';
 
 import {AuthServiceService} from '../../services/auth-service.service';
 
@@ -16,7 +16,7 @@ export class LoginComponent implements OnInit {
   connecteUser : string;
 
   constructor(
-    // private FlashMessages: FlashMessagesService,
+    private FlashMessages: FlashMessagesService,
     private router: Router,
     private AuthService: AuthServiceService
   ) { }
@@ -25,12 +25,12 @@ export class LoginComponent implements OnInit {
   }
 
   onLoginSubmit() {
-    this.router.navigate(['/home']);
+    // this.router.navigate(['/home']);
     const user = {
       username: this.username,
       password: this.password
     }
-
+ 
     if (user.username == undefined || user.password == undefined) {
       // this.FlashMessages.show('Please fill all fields', { cssClass: 'alert-danger', timeout: 3000 });
       return false;

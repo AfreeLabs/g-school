@@ -6,6 +6,21 @@
     <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
     Create
   </button>
+  <span class="pull-right">
+    <div class="dropdown">
+    <button class="btn btn-sm btn-primary dropdown-toggle" style="margin: -6px;" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+      Plus
+      <span class="caret"></span>
+    </button>
+    <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+      <li><a href="#">Admission</a></li>
+      <li><a href="#">Class levels</a></li>
+      <li><a href="#">Teachers</a></li>
+      <li role="separator" class="divider"></li>
+      <li><a href="#">Separated link</a></li>
+    </ul>
+  </div>
+  </span>
 </div>
 
 <div class="panel panel-primary">
@@ -15,7 +30,7 @@
   <div class="panel-body">
 
     <!-- Table -->
-    <table class="table">
+    <table class="table table-bordered">
       <thead>
         <tr>
           <th>ID</th>
@@ -28,10 +43,10 @@
       <tr *ngFor="let item of listStudent">
         <td> {{item.id}} </td>
         <td><a routerLink="../studentDetails">{{item.student_card_number}}</a></td>
-        <td> {{item.Name}} </td>
+        <td> {{item.registree.first_name}}&nbsp;{{item.registree.middle_name}}&nbsp;{{item.registree.last_name}}</td>
         <td> {{item.department.name}} </td>
         <td> {{item.class_level.name}} </td>
-        
+        <td><button class="btn btn-default btn-sm" (click)="getDetails(event)">Show</button></td>     
       </tr>
     </table>
 

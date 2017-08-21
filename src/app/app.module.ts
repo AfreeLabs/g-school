@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import {RouterModule, Routes} from '@angular/router';
-import { DataTableModule } from 'angular-2-data-table';
+// import { DataTableModule } from 'angular-2-data-table';
 
 import { AuthGuard } from './guards/auth.guard';
 import { FlashMessagesService } from 'angular2-flash-messages';
@@ -39,6 +39,8 @@ import { SubjectsComponent } from './components/departement/subjects/subjects.co
 import { ExamsComponent } from './components/departement/exams/exams.component';
 import { StudentDetailsComponent } from './components/student/student-list/student-details/student-details.component';
 import { StudentListComponent } from './components/student/student-list/student-list.component';
+import { TableFilterPipe } from './pipes/table-filter.pipe';
+import { FinancesComponent } from './components/configuration/finances/finances.component';
 
 
 const appRoutes: Routes = [
@@ -94,7 +96,8 @@ const appRoutes: Routes = [
       { path: 'school', component: SchoolComponent },
       { path: 'newSchool', component: NewSchoolComponent },
       { path: 'batch', component: BatchComponent },
-      { path: 'users', component: UsersComponent }
+      { path: 'users', component: UsersComponent },
+      { path: 'finances', component: FinancesComponent }
     ], canActivate: [AuthGuard]
   },
 ]
@@ -129,13 +132,15 @@ const appRoutes: Routes = [
     SubjectsComponent,
     ExamsComponent,
     StudentDetailsComponent,
-    StudentListComponent
+    StudentListComponent,
+    TableFilterPipe,
+    FinancesComponent,
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
-    DataTableModule,
+    // DataTableModule,
     RouterModule.forRoot(appRoutes),
   ],
   providers: [FlashMessagesService, FetchData, AuthServiceService, AuthGuard],

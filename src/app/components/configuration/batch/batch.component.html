@@ -3,10 +3,10 @@
     <li><a href="#" routerLink="../../configuration">Configuration</a></li>
     <li class="active">Batch List</li>
   </ol>
-  <button class="btn btn-success" type="submit" data-toggle="modal" data-target="#myModal"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span>Create</button>
+  <button class="btn btn-primary btn-sm" type="submit" data-toggle="modal" data-target="#myModal"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span>Create</button>
   <!-- <button class="btn btn-danger" type="submit"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span>Cancel</button> -->
 </div>
-<div class="panel panel-default">
+<div class="panel panel-primary">
   <!-- Default panel contents -->
   <div class="panel-heading">Batch List
     <!-- <button class="btn-save" data-toggle="modal" data-target="#myModal">Create</button> -->
@@ -16,48 +16,28 @@
   </div>
   <!-- <button type="button" class="btn btn-primary" (click)="onCreate">Create</button> -->
   <!-- Table -->
-  <div style="margin: auto; max-width: 1000px; margin-bottom: 50px;">
-    <data-table id="persons-grid"
-        headerTitle=""
-        [items]="items"
-        [itemCount]="itemCount"
-        [pagination]="false"
-        [indexColumn]="false"
-        [selectColumn]="true"
-        [multiSelect]="true"
-        (reload)="reloadItems($event)"
-
-        (rowClick)="rowClick($event)"
-        (rowDoubleClick)="rowDoubleClick($event)"
-        [rowTooltip]="rowTooltip"
-        >
-        <data-table-column
-            [property]="'name'" 
-            [header]="'Batch Name'"
-            [sortable]="true"
-            [resizable]="true">
-        </data-table-column>
-        
-        <data-table-column
-            [property]="'start_date'"
-            [header]="'Start Date'"
-            [sortable]="true"
-            [resizable]="true">
-        </data-table-column>
-        <data-table-column
-            [property]="'end_date'"
-            [header]="'End Date'"
-            [sortable]="true"
-            [resizable]="true">
-        </data-table-column>
-        <data-table-column
-            [property]="'school'"
-            [header]="'school'"
-            [sortable]="true"
-            [resizable]="true">
-        </data-table-column>
-    </data-table>
-</div>
+  <table class="table">
+    <thead>
+        <tr>
+          <th>ID</th>
+          <th>Batch Name</th>
+          <th>Start Date</th>
+          <th>End Date</th>
+          <th>School</th>
+        </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of items">
+        <td>{{item.id}}</td>
+        <td>{{item.name}}</td>
+        <td>{{item.start_date}}</td>
+        <td>{{item.end_date}}</td>
+        <td>{{item.school}}</td>
+      </tr>
+    </tbody>
+    
+  </table>
+  
 
 <!-- Modal -->
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="gridSystemModalLabel">
@@ -103,8 +83,8 @@
         </div>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary" (click)="onCreate()">Create</button>
+        <button type="button" class="btn btn-default btn-sm" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-success btn-sm" (click)="onCreate()">Create</button>
       </div>
     </div>
   </div>

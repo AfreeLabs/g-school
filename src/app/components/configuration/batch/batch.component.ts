@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Http, Response } from '@angular/http';
-import { DataTableResource } from 'angular-2-data-table';
 import { FetchData } from '../../../services/FetchData.service';
 
 

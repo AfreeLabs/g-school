@@ -8,6 +8,9 @@ import { FetchData } from '../../../../services/FetchData.service';
 })
 export class NewRegistrationComponent implements OnInit {
 
+  items= "";
+  itemsCount: number;
+
     // Form fields
      registration_number = "164565699526626";
      first_name: string;
@@ -37,6 +40,22 @@ export class NewRegistrationComponent implements OnInit {
   ngOnInit() {
   }
 
+  getAddedRegistreeNumber() {
+    let endPoint = 'api/admission/registration/' ;
+    
+        this.fetchData.get(endPoint)
+          .subscribe(
+          (data) => {
+            this.items = data;
+            this.itemsCount = this.items.length;
+            console.log(this.items);
+            console.log(this.itemsCount);
+          },
+          (error) => {
+            console.log('unable to get info');
+    
+          });
+  }
   onCreateRegistree() {
      const registreeForm = {
       registration_number: this.registration_number,

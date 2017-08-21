@@ -1,9 +1,9 @@
 <div class="page-header">
   <ol class="breadcrumb">
-    <li><a href="#" routerLink="../../admission">Admission</a></li>
-    <li class="active">Registration List</li>
+    <li><a href="#" routerLink="../../admission">Configuration</a></li>
+    <li class="active">School</li>
   </ol>
-  <button class="btn btn-success btn-sm" type="submit" routerLink="../newSchool"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span>Create</button>
+  <button class="btn btn-primary btn-sm" type="submit" routerLink="../newSchool"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span>&nbsp;Create</button>
   <!-- <button class="btn btn-success btn-sm" type="submit" (click)="show = !show"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span>{{show ? 'Modifier' : 'Sauvegarder'}}</button> -->
   <!-- <button class="btn btn-danger" type="submit"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span>Cancel</button> -->
 </div>
@@ -27,8 +27,8 @@
         <tbody>
           <tr *ngFor="let item of school">
             <td>{{item.id}}</td>
-            <td><a routerLink="../newSchool">{{item.name}}</a></td>
-            <td>{{item.abreviation}}</td>
+            <td><strong><a routerLink="../newSchool">{{item.name}}</a></strong></td>
+            <td><strong>{{item.abreviation}}</strong></td>
           </tr>
         </tbody>
       </table>

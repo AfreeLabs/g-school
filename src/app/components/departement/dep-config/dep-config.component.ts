@@ -8,7 +8,7 @@ import { FetchData } from '../../../services/FetchData.service';
 })
 export class DepConfigComponent implements OnInit {
 
-  depName = "";
+  items = "";
   Department: string;
   abreviation: string;
   fees: string;
@@ -24,7 +24,7 @@ export class DepConfigComponent implements OnInit {
     this.fetchData.get(endPoint)
       .subscribe(
         (data) => {
-          this.depName = data;
+          this.items = data;
         },
         (error) => {
           console.log('unable to get info');
