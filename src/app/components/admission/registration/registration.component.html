@@ -51,84 +51,25 @@
       <tr *ngFor="let item of items | tableFilter:listFilter.value">
         <td><input class="form-check-input" type="checkbox" value=""></td>
         <td>{{item.date}}</td>
-        <td><strong>{{item.registration_number}}</strong></td>
+        <td><a [routerLink]="['../registreeDetails', item.id]"><strong>{{item.registration_number}}</strong></a></td>
         <td>{{item.first_name}}</td>
         <td><strong>{{item.last_name | uppercase}}</strong></td>
         <td style="width: 150px;">
           <button class="btn btn-danger btn-sm" type="submit" (click)="Delete(item); $event.stopPropagation()"><span class="" aria-hidden="true"></span>Delete</button>
-          <button class="btn btn-default btn-sm" type="submit" (click)="onGetDetails()"><span class="" aria-hidden="true"></span>Details</button>
+          <button class="btn btn-default btn-sm" type="submit" [class.selected]="item === selectedItem" (click)="onSelect(item)" ><span class="" aria-hidden="true"></span>Details</button>
+          <!-- <hero-detail [hero]="selectedHero"></hero-detail> -->
         </td>
       </tr>
     </tbody>
 
   </table>
 
-  <!-- <div style="margin: auto; max-width: 1000px; margin-bottom: 50px;">
-    <data-table id="persons-grid"
-        headerTitle=""
-        [items]="items"
-        [itemCount]="itemCount"
-        [pagination]="false"
-        [indexColumn]="false"
-        [selectColumn]="true"
-        [multiSelect]="true"
-        (reload)="reloadItems($event)"
+  <!-- <app-registree-details [item]="selectedItem"></app-registree-details> -->
 
-        (rowClick)="rowClick($event)"
-        (rowDoubleClick)="rowDoubleClick($event)"
-        [rowTooltip]="rowTooltip"
-        >
-        <data-table-column
-            [property]="'first_name'" 
-            [header]="'First Name'"
-            [sortable]="true"
-            [resizable]="true">
-        </data-table-column>
-        <data-table-column
-            [property]="'last_name'"
-            [header]="'Last Name'"
-            [sortable]="true"
-            [resizable]="true">
-        </data-table-column>
-        <data-table-column
-            [property]="'date'"
-            [header]="'Date'"
-            [sortable]="true">
-            <template #dataTableCell let-item="item">
-                <span>{{item.date_of_birth | date:'dd-MM-yyyy'}}</span>
-            </template>
-        </data-table-column>
-        <data-table-column
-            property="registration_number"
-            header="Registration number"
-            width="150px">
-        </data-table-column>
-        <data-table-column
-            [property]="'jobTitle'"
-            [header]="'Job title'"
-            [visible]="false">
-        </data-table-column>
-        <data-table-column
-            [property]="'active'"
-            [header]="'Active'"
-            [width]="100"
-            [resizable]="true">
-            <template #dataTableHeader let-item="item">
-                <span style="color: rgb(232, 0, 0)">Active</span>
-            </template>
-            <template #dataTableCell let-item="item">
-                <span style="color: grey">
-                <span class="glyphicon glyphicon-ok" *ngIf="item.active"></span>
-                <span class="glyphicon glyphicon-remove" *ngIf="!item.active"></span>
-                </span>
-            </template>
-        </data-table-column>
-    </data-table> -->
-  <!-- </div> -->
 </div>
 
 <!-- Modal -->
-<!-- <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="gridSystemModalLabel">
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="gridSystemModalLabel">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
@@ -174,4 +115,4 @@
       </div>
     </div>
   </div>
-</div> -->
+</div>

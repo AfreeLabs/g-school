@@ -1,22 +1,24 @@
 import { Component, OnInit } from '@angular/core';
 import { FetchData } from '../../../services/FetchData.service';
 import { TableFilterPipe } from '../../../pipes/table-filter.pipe';
+import { Registree } from '../../../models/registree';
 
 
 @Component({
   selector: 'app-registration',
   templateUrl: './registration.component.html',
   styleUrls: ['./registration.component.css'],
-  // pipes: [TableFilterPipe],
 })
 export class RegistrationComponent implements OnInit {
 
-
+  
 
   Response = null;
-  items = "" ;
+  items: Registree [] ;
   count = 0 ;
   itemCount = 0 ;
+
+  selectedItem: Registree;
 
   constructor(private fetchData: FetchData) { }
   ngOnInit() {
@@ -50,6 +52,12 @@ export class RegistrationComponent implements OnInit {
 
     };
   }
+
+
+  // onSelect(item: Registree): void {
+  //   this.selectedItem = item;
+  //   console.log(this.selectedItem);
+  // }
    
 
 

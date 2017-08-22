@@ -42,21 +42,26 @@
   </div>
 
   <!-- Table -->
-  <table class="table">
+  <table class="table table-bordered table-hover">
     <thead>
         <tr>
           <th>ID</th>
           <th>Class Level</th>
           <th>Place</th>
           <th>Department</th>
+          <th>Menu</th>
         </tr>
     </thead>
     <tbody>
       <tr *ngFor="let item of room">
-        <td>{{item.id}}</td>
+        <td><strong>{{item.id}}</strong></td>
         <td><a href="#">{{item.name}}</a></td>
-        <td>{{item.places}}</td>
+        <td align="right">{{item.places}}</td>
         <td>{{item.department.name}}</td>
+        <td style="width: 150px">
+          <button class="btn btn-danger btn-sm" (click)="onDelete()">Delete</button>
+          <button class="btn btn-default btn-sm" (click)="onShow()">Details</button>
+        </td>
       </tr>
     </tbody>
   </table>

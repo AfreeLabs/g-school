@@ -41,6 +41,7 @@ import { StudentDetailsComponent } from './components/student/student-list/stude
 import { StudentListComponent } from './components/student/student-list/student-list.component';
 import { TableFilterPipe } from './pipes/table-filter.pipe';
 import { FinancesComponent } from './components/configuration/finances/finances.component';
+import { RegistreeDetailsComponent } from './components/admission/registration/registree-details/registree-details.component';
 
 
 const appRoutes: Routes = [
@@ -52,7 +53,8 @@ const appRoutes: Routes = [
       { path: 'registration', component: RegistrationComponent},
       { path: 'inscription', component: InscriptionComponent},
       { path: 'newRegistration', component: NewRegistrationComponent },
-      { path: 'newAdmission', component: NewAdmissionComponent }
+      { path: 'newAdmission', component: NewAdmissionComponent },
+      { path: 'registreeDetails/:id', component: RegistreeDetailsComponent }
     ], canActivate: [AuthGuard]
 
   },
@@ -79,7 +81,7 @@ const appRoutes: Routes = [
       { path: 'grades', component: RoomsComponent },
       { path: 'payment', component: ClassLevelsComponent },
       { path: 'students', component: DepConfigComponent },
-      { path: 'studentDetails', component: StudentDetailsComponent },
+      { path: 'studentDetails/:id', component: StudentDetailsComponent },
       { path: 'studentList', component: StudentListComponent }
     ], canActivate: [AuthGuard]
 
@@ -135,6 +137,7 @@ const appRoutes: Routes = [
     StudentListComponent,
     TableFilterPipe,
     FinancesComponent,
+    RegistreeDetailsComponent,
   ],
   imports: [
     BrowserModule,

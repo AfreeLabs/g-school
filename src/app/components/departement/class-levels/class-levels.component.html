@@ -3,7 +3,7 @@
     <li><a href="#" routerLink="../../configuration">Department</a></li>
     <li class="active">Class Level List</li>
   </ol>
-  <button class="btn btn-primary btn-sm" type="submit" data-toggle="modal" data-target="#myModal"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span>Create</button>
+  <button class="btn btn-primary btn-sm" type="submit" data-toggle="modal" data-target="#myModal"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span>&nbsp;Create</button>
   <span class="pull-right">
     <div class="dropdown">
       <button class="btn btn-sm btn-default dropdown-toggle" style="margin: -6px;" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
@@ -49,7 +49,7 @@
     <tbody>
       <tr *ngFor="let item of classLevel">
         <td>{{item.id}}</td>
-        <td><a href="#">{{item.name}}</a></td>
+        <td><strong><a href="#">{{item.name}}</a></strong></td>
         <td>{{item.department.name}}</td>
       </tr>
     </tbody>

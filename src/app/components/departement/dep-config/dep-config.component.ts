@@ -19,7 +19,7 @@ export class DepConfigComponent implements OnInit {
    }
 
   ngOnInit() {
-    let endPoint = "api/department/department/";
+    const endPoint = 'api/department/department/';
 
     this.fetchData.get(endPoint)
       .subscribe(
@@ -40,7 +40,7 @@ export class DepConfigComponent implements OnInit {
       fees: this.fees,
     }
 
-    let endPoint = "api/department/department/";
+    const endPoint = 'api/department/department/';
 
     this.fetchData.post(endPoint, depForm)
       .subscribe();

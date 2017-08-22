@@ -1,4 +1,5 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { StudentDetailsComponent } from './student-details/student-details.component';
 import { FetchData } from '../../../services/FetchData.service';
 import {Router} from '@angular/router';
 @Component({
@@ -8,33 +9,26 @@ import {Router} from '@angular/router';
 })
 export class StudentListComponent implements OnInit {
 
-  listStudent = "";
-  @Output () onGetDetails = new EventEmitter();
+  items = "";
 
   constructor(private fetchData: FetchData, private router: Router) { }
 
   ngOnInit() {
-    // this.getInfo();
+    this.getInfo();
   }
 
-  // getInfo() {
-  //   let endPoint = "api/admission/admission/";
-  //   this.fetchData.get(endPoint)
-  //   .subscribe(
-  //     (data) => {
-  //       this.listStudent = data;
-  //     },
-  //       (error) => {
-  //         console.log('unable to get info');
-  //     });
-  // }
-
-  getDetails(event: Event) {
-    // this.onGetDetails.emit(this.item)
-    // this.router.navigate(['/studentDetails'] {
-    //   // item: item;
-    // });
-    
+  getInfo() {
+    let endPoint = "api/admission/admission/";
+    this.fetchData.get(endPoint)
+    .subscribe(
+      (data) => {
+        this.items = data;
+      },
+        (error) => {
+          console.log('unable to get info');
+      });
   }
+
+
 
 }

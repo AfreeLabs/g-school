@@ -30,7 +30,7 @@
   <div class="panel-body">
 
     <!-- Table -->
-    <table class="table table-bordered">
+    <table class="table table-bordered table-hover">
       <thead>
         <tr>
           <th>ID</th>
@@ -38,11 +38,12 @@
           <th>Student Name</th>
           <th>Department</th>
           <th>Class Level</th>
+          <th>Menu</th>
         </tr>
       </thead>
-      <tr *ngFor="let item of listStudent">
+      <tr *ngFor="let item of items">
         <td> {{item.id}} </td>
-        <td><a routerLink="../studentDetails">{{item.student_card_number}}</a></td>
+        <td><a [routerLink]="['../studentDetails', item.id]"><strong>{{item.student_card_number}}</strong></a></td>
         <td> {{item.registree.first_name}}&nbsp;{{item.registree.middle_name}}&nbsp;{{item.registree.last_name}}</td>
         <td> {{item.department.name}} </td>
         <td> {{item.class_level.name}} </td>

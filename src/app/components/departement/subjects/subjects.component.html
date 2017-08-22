@@ -3,7 +3,7 @@
     <li><a href="#" routerLink="../../configuration">Department</a></li>
     <li class="active">Subject List</li>
   </ol>
-  <button class="btn btn-primary btn-sm" type="submit" data-toggle="modal" data-target="#myModal"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span>Create</button>
+  <button class="btn btn-primary btn-sm" type="submit" data-toggle="modal" data-target="#myModal"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span>&nbsp;Create</button>
   <span class="pull-right">
     <div class="dropdown">
       <button class="btn btn-sm btn-default dropdown-toggle" style="margin: -6px;" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
@@ -36,8 +36,8 @@
         </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let item of subject">
-        <td>{{item.code}}</td>
+      <tr *ngFor="let item of subjects">
+        <td><strong>{{item.code}}</strong></td>
         <td><a href="#">{{item.name}}</a></td>
         <td>{{item.class_level.name}}</td>
         <td>{{item.teacher}}</td>
@@ -63,32 +63,35 @@
           </div>
           <div class="col-md-8">
             <div class="input-group input-group-sm">
-              <span class="input-group-addon" id="sizing-addon3">Room Code</span>
-              <input type="text" class="form-control" placeholder="Room Code" name="roomCode" [(ngModel)]="roomCode" aria-describedby="sizing-addon3">
+              <span class="input-group-addon" id="sizing-addon3">Subject Code</span>
+              <input type="text" class="form-control" placeholder="Subject Code" name="code" [(ngModel)]="code" aria-describedby="sizing-addon3">
             </div>
 
             <div class="input-group input-group-sm" style="padding-top: 10px">
-              <span class="input-group-addon" id="sizing-addon3">Room Name</span>
-              <input type="text" class="form-control" placeholder="Room Name" name="roomName" [(ngModel)]="roomName" aria-describedby="sizing-addon3">
+              <span class="input-group-addon" id="sizing-addon3">Subject Name</span>
+              <input type="text" class="form-control" placeholder="Subject Name" name="name" [(ngModel)]="name" aria-describedby="sizing-addon3">
             </div>
 
             <div class="input-group input-group-sm" style="padding-top: 10px">
-              <span class="input-group-addon" id="sizing-addon3">Place</span>
-              <input type="number" class="form-control" placeholder="Place" name="roomPlace" [(ngModel)]="roomPlace" aria-describedby="sizing-addon3">
-            </div>
-
-            <!-- <div class="input-group input-group-sm" style="padding-top: 10px">
-              <span class="input-group-addon" id="sizing-addon3">Class level</span>
-              <input type="text" class="form-control" placeholder="Class level" name="abrvCrs" aria-describedby="sizing-addon3">
-            </div> -->
+                <span class="input-group-addon" id="sizing-addon3">Class Level</span>
+                <select class="form-control" name="class_level" [(ngModel)]="class_level">
+                   <option>----</option>
+                   <option *ngFor="let item of classLvls" [ngValue]="item.id">{{item.name}}</option> 
+                </select>
+              </div>
 
             <div class="input-group input-group-sm" style="padding-top: 10px">
-              <span class="input-group-addon" id="sizing-addon3">Department</span>
-              <select class="form-control" name="department" [(ngModel)]="department">
+              <span class="input-group-addon" id="sizing-addon3">Teacher</span>
+              <select class="form-control" name="teacher" [(ngModel)]="teacher">
                  <option>----</option>
-                 <option *ngFor="let item of departments" [ngValue]="item.id">{{item.name}}</option> 
+                 <option *ngFor="let item of teachers" [ngValue]="item.id">{{item.first_name}}&nbsp;{{item.middle_name}}&nbsp;{{item.last_name}}</option> 
               </select>
             </div>
+
+            <div class="input-group input-group-sm">
+                <span class="input-group-addon" id="sizing-addon3">Description</span>
+                <input type="text" class="form-control" placeholder="Description" name="description" [(ngModel)]="description" aria-describedby="sizing-addon3">
+              </div>
           </div>
         </div>
       </div>
